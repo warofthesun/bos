@@ -15,12 +15,38 @@ and will be used across all viewports.
 GENERAL STYLES
 *********************/
 
+#main {
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+.flex {
+	display: flex;
+
+	&--column {
+		flex-direction: column;
+	}
+
+	&--row {
+		flex-direction: row;
+
+		&_middle {
+			align-items: center;
+		}
+
+		&_end {
+			justify-content: flex-end;
+		}
+	}
+}
+
 body {
 	font-family: $sans-serif;
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $white;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -31,6 +57,15 @@ img {
 
 #inner-header, #inner-footer {
 	flex-direction: column;
+}
+
+#inner-header {
+	.logo {
+		img {
+			width: 100%;
+			max-width: 200px;
+		}
+	}
 }
 
 #inner-footer {
@@ -46,46 +81,128 @@ img {
 	}
 }
 
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
+.landing-page {
+	#inner-content {
+		height: calc(100vh - 75px);
+	}
 
-.rtl {}                           /* for sites that are read right to left (i.e. hebrew) */
-.home {}                          /* home page */
-.blog {}                          /* blog template page */
-.archive {}                       /* archive page */
-.date {}                          /* date archive page */
-	.date-paged-1 {}                /* replace the number to the corresponding page number */
-.search {}                        /* search page */
-	.search-results {}              /* search result page */
-	.search-no-results {}           /* no results search page */
-	.search-paged-1 {}              /* individual paged search (i.e. body.search-paged-3) */
-.error404 {}                      /* 404 page */
-.single {}                        /* single post page */
-	.postid-1 {}                    /* individual post page by id (i.e. body.postid-73) */
-	.single-paged-1 {}              /* individual paged single (i.e. body.single-paged-3) */
-.attachment {}                    /* attatchment page */
-	.attachmentid-1 {}              /* individual attatchment page (i.e. body.attachmentid-763) */
-	.attachment-mime-type {}        /* style mime type pages */
-.author {}                        /* author page */
-	.author-nicename {}             /* user nicename (i.e. body.author-samueladams) */
-	.author-paged-1 {}              /* paged author archives (i.e. body.author-paged-4) for page 4 */
-.category {}                      /* category page */
-	.category-1 {}                  /* individual category page (i.e. body.category-6) */
-	.category-paged-1 {}            /* replace the number to the corresponding page number */
-.tag {}                           /* tag page */
-	.tag-slug {}                    /* individual tag page (i.e. body.tag-news) */
-	.tag-paged-1 {}                 /* replace the number to the corresponding page number */
-.page-template {}                 /* custom page template page */
-	.page-template-page-php {}      /* individual page template (i.e. body.page-template-contact-php */
-	.page-paged-1 {}                /* replace the number to the corresponding page number */
-	.page-parent {}                 /* parent page template */
-	.page-child {}                  /* child page template */
-	.parent-pageid-1 {}             /* replace the number to the corresponding page number */
-.logged-in {}                     /* if user is logged in */
-.paged {}                         /* paged items like search results or archives */
-	.paged-1 {}                     /* individual paged (i.e. body.paged-3) */
+	.h1, h1 {
+		font-size: 1em;
+		font-weight: bold;
+		display: inline-block;
+		margin: 0;
+		padding: .4em .8em;
+		text-transform: uppercase;
+		line-height: 1;
+	}
+
+	.h2, h2 {
+		font-weight: bold;
+		margin: 1em 0;
+	}
+
+	.founders {
+		display: flex;
+		margin: 0;
+		padding: 0;
+
+		.founders-background {
+			background-size: cover;
+			background-position: 50%;
+			filter: url('#colors');
+			margin: 0;
+			padding: 0;
+		}
+
+		.overlay {
+			background-color: rgba($black, 0.6);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+
+			article {
+				width: 80%;
+				text-align: center;
+				color: $white;
+				margin-top: -30%;
+
+				.h1, h1 {
+					background-color: $primary;
+				}
+			}
+		}
+	}
+	.developers {
+		background-color: $primary;
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+
+		.overlay {
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+
+			article {
+				width: 80%;
+				text-align: center;
+				color: $white;
+				margin-top: -30%;
+
+				.h1, h1 {
+					background-color: $black;
+				}
+			}
+		}
+	}
+
+	.testimonials {
+		position: absolute;
+		top: 60vh;
+		display: flex;
+		width: 100%;
+		justify-content: center;
+
+		.container {
+			background-color: $primary-lt;
+			width: 700px;
+			padding: 2em;
+			border-bottom: 4px solid $primary;
+			box-shadow: 0px -2px 3px rgba($black, 0.4);
+
+			.avatar {
+				height: 100px;
+		    width: 100px;
+		    background-size: cover;
+		    background-position: center;
+		    border-radius: 80px;
+			}
+
+			.testimonial {
+				font-style: italic;
+				padding-left: 1em;
+
+				.user {
+					font-style: normal;
+					font-size: .8em;
+
+					.name {
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+}
 
 /*********************
 LAYOUT & GRID STYLES
@@ -174,20 +291,18 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: $white;
 }
 
 	#logo {
 		margin: 0.75em 0;
 
 		a {
-			color: $white;
+			color: $black;
 		}
 	}
 
-/*********************
-NAVIGATION STYLES
-*********************/
+// NAVIGATION STYLES
 
 /*
 all navs have a .nav class applied via
@@ -251,24 +366,32 @@ and more scalable.
 
 		a {
 			display: block;
-			color: $white;
+			color: $black;
 			text-decoration: none;
 			padding: 0.75em;
-
-			/*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/
-			&:hover, &:focus {
-
-			}
+			text-transform: uppercase;
 		}
 
 		&:first-child {}
 
-		&:last-child {}
+		&:last-child {
+			background-color: $primary;
+			border-radius: .3em;
+
+
+			a {
+				color: $white;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: none;
+					border-radius: .3em;
+					background-color: $link-hover;
+					text-shadow: 1px 1px 1px rgba($black, 0.5);
+					@include transition(all 0.2s ease-in-out);
+				}
+			}
+		}
 
 		/*
 		so you really have to rethink your dropdowns for mobile.
@@ -319,14 +442,11 @@ POSTS & CONTENT STYLES
 *********************/
 
 #content {
-	margin-top: 1.5em;
+	margin-top: 0;
 }
 
 		.hentry {
 			background-color: $white;
-			border-radius: 3px;
-			margin-bottom: 1.5em;
-			border: 1px solid $border-color;
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -975,8 +1095,8 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	background-color: $white;
+	color: $black;
 }
 
 	/*

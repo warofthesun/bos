@@ -73,3 +73,37 @@ and it will create a button dependant on those variables.
   } // end active
 
 } // end blue button
+
+.btn {
+  &--outline {
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: .3em;
+    text-transform: uppercase;
+    padding: .2em .8em;
+    color: $white;
+    @include transition(all .2s ease-in-out);
+
+    &_blue {
+      border: 2px solid $primary;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+
+    &_black {
+      border: 2px solid $black;
+
+      &:hover {
+        background-color: $white;
+      }
+    }
+
+    i {
+      font-weight: normal;
+    }
+  }
+
+}

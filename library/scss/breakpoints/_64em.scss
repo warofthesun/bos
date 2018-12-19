@@ -31,9 +31,19 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+#inner-header {
+	flex-direction: row;
 
-	#logo {}
+	.logo {
+		img {
+			max-width: 100px;
+		}
+	}
+}
+
+.header {
+	height: 75px;
+}
 
 /*********************
 NAVIGATION STYLES
@@ -41,14 +51,18 @@ NAVIGATION STYLES
 
 .nav {
 	border: 0;
-	
+
 
 	ul {
 		background:$black;
 		margin-top:0;
 	}
 	li {
+		margin-right: 1em;
 
+		&:last-child {
+			margin-right: 0;
+		}
 
 		a {
 			border-bottom: 0;
@@ -58,8 +72,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/
 			&:hover, &:focus {
-				color: $white;
-				text-decoration: underline;
+				color: $link-hover;
 			}
 		}
 

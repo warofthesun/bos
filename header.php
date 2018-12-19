@@ -32,9 +32,8 @@
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
-		<?php // end of wordpress head ?>
+
 		<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 		<script>
       window.sr = ScrollReveal({ duration: 600, reset: true, easing: 'ease-in', scale: .98, distance:'50px'});
@@ -45,37 +44,46 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+		<svg xmlns="http://www.w3.org/2000/svg" style="position:relative;height:0;display:none;">
+		   <defs>
+		      <filter id="colors">
 
+		         <feColorMatrix result="base" in="SourceGraphic" result="1" type="matrix"
+		         values="0.3333 0.3333 0.3333 0 0
+		            0.3333 0.3333 0.3333 0 0
+		            0.3333 0.3333 0.3333 0 0
+		            0      0      0      1 0">
+             </feColorMatrix>
+						 <!--feBlend mode="multiply" in="1" in2="2" result="12"/-->
+		      </filter>
+		   </defs>
+		</svg>
 		<div id="container">
 
-			<header class="header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
+			<header class="header flex flex--row flex--row_middle" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-				<div id="inner-header" class="wrap  row">
+				<div id="inner-header" class="wrap row">
+					<div class="col-xs-12 col-md-2 flex flex--row flex--row_middle">
+						<a href="<?php echo home_url(); ?>" rel="nofollow" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/boslogo.png" /></a>
+					</div>
+					<div class="col-xs-12 col-md-10">
+						<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" class="flex flex--row flex--row_middle flex--row_end">
+							<?php wp_nav_menu(array(
+	    					         'container' => false,                           // remove nav container
+	    					         'container_class' => 'menu ',                 // class of container (should you choose to use it)
+	    					         'menu' => __( 'The Main Menu', 'startertheme' ),  // nav name
+	    					         'menu_class' => 'nav top-nav ',               // adding custom nav class
+	    					         'theme_location' => 'main-nav',                 // where it's located in the theme
+	    					         'before' => '',                                 // before the menu
+	        			               'after' => '',                                  // after the menu
+	        			               'link_before' => '',                            // before each link
+	        			               'link_after' => '',                             // after each link
+	        			               'depth' => 0,                                   // limit the depth of the nav
+	    					         'fallback_cb' => ''                             // fallback function (if there is one)
+							)); ?>
 
-					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-
-					<p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></p>
-
-					<?php // if you'd like to use the site description you can un-comment it below ?>
-					<?php // bloginfo('description'); ?>
-
-
-					<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-						<?php wp_nav_menu(array(
-    					         'container' => false,                           // remove nav container
-    					         'container_class' => 'menu ',                 // class of container (should you choose to use it)
-    					         'menu' => __( 'The Main Menu', 'startertheme' ),  // nav name
-    					         'menu_class' => 'nav top-nav ',               // adding custom nav class
-    					         'theme_location' => 'main-nav',                 // where it's located in the theme
-    					         'before' => '',                                 // before the menu
-        			               'after' => '',                                  // after the menu
-        			               'link_before' => '',                            // before each link
-        			               'link_after' => '',                             // after each link
-        			               'depth' => 0,                                   // limit the depth of the nav
-    					         'fallback_cb' => ''                             // fallback function (if there is one)
-						)); ?>
-
-					</nav>
+						</nav>
+					</div>
 					<div id="mobile-nav">
 						Menu
 					</div>

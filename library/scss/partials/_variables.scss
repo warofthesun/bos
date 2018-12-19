@@ -22,22 +22,20 @@ $alert-red:         #fbe3e4;
 $alert-green:       #e6efc2;
 $alert-blue:        #d5edf8;
 
-$black:             #000;
+$black:             #1c1e1e;
 $white:             #fff;
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
-$text-color:        #5c6b80;
+$text-color:        $black;
 $meta-gray:         #9fa6b4;
 
-$primary-lt:        #333;
-$primary:           #eceee5;
-$primary-md:        #7dd667;
-$primary-dk:        #f01d4f;
+$primary-lt:        #d7e9f5;
+$primary:           #437bd9;
 $secondary:         #2980b9;
 $accent:            #333;
 
-$link-color:        $secondary;
+$link-color:        $primary;
 $link-hover:        darken($link-color, 9%);
 
 $border-color:      #ccc;

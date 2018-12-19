@@ -249,6 +249,17 @@ LAYOUT & GRID STYLES
 /*********************
 HEADER STYLES
 *********************/
+#inner-header {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  #inner-header .logo img {
+    max-width: 100px; }
+
+.header {
+  height: 75px; }
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -258,13 +269,16 @@ NAVIGATION STYLES
   /* highlight current page */
   /* end current highlighters */ }
   .nav ul {
-    background: #000;
+    background: #1c1e1e;
     margin-top: 0; }
   .nav li {
+    margin-right: 1em;
     /*
 		plan your menus and drop-downs wisely.
 		*/
     /* showing sub-menus */ }
+    .nav li:last-child {
+      margin-right: 0; }
     .nav li a {
       border-bottom: 0;
       /*
@@ -272,8 +286,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/ }
       .nav li a:hover, .nav li a:focus {
-        color: #fff;
-        text-decoration: underline; }
+        color: #2863c6; }
     .nav li ul.sub-menu,
     .nav li ul.children {
       margin-top: 0;
@@ -367,7 +380,9 @@ be seen on the Desktop.
 
 ******************************************************************/
 .wrap {
-  width: 1040px; }
+  width: 1320px; }
+  .wrap--wider {
+    width: 1580px; }
 
 /*
 you can call the larger styles if you want, but there's really no need

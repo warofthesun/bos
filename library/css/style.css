@@ -1364,7 +1364,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 .accent-btn, .comment-reply-link, #submit {
   display: inline-block;
   position: relative;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
   font-size: 0.9em;
@@ -1395,6 +1395,27 @@ and it will create a button dependant on those variables.
     background-color: #292929; }
   .accent-btn:active, .comment-reply-link:active, #submit:active {
     background-color: #262626; }
+
+.btn--outline {
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: .3em;
+  text-transform: uppercase;
+  padding: .2em .8em;
+  color: #fff;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .btn--outline_blue {
+    border: 2px solid #437bd9; }
+    .btn--outline_blue:hover {
+      background-color: #fff; }
+  .btn--outline_black {
+    border: 2px solid #1c1e1e; }
+    .btn--outline_black:hover {
+      background-color: #fff; }
+  .btn--outline i {
+    font-weight: normal; }
 
 /******************************************************************
 Site Name:
@@ -1439,7 +1460,7 @@ textarea,
   padding: 0 12px;
   margin-bottom: 14px;
   font-size: 1em;
-  color: #5c6b80;
+  color: #1c1e1e;
   border-radius: 3px;
   vertical-align: middle;
   -webkit-box-shadow: none;
@@ -1447,7 +1468,7 @@ textarea,
   border: 0;
   width: 100%;
   max-width: 400px;
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   background-color: #f7f8fa;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out; }
@@ -1707,23 +1728,55 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+#main {
+  position: relative;
+  padding: 0;
+  margin: 0; }
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .flex--column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .flex--row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    .flex--row_middle {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .flex--row_end {
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end; }
+
 body {
-  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 100%;
   line-height: 1.5;
-  color: #5c6b80;
-  background-color: #eaedf2;
+  color: #1c1e1e;
+  background-color: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
 img {
-  image-rendering: -webkit-optimize-contrast; }
+  image-rendering: auto; }
 
 #inner-header, #inner-footer {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+
+#inner-header .logo img {
+  width: 100%;
+  max-width: 200px; }
 
 #inner-footer .nav {
   opacity: 1;
@@ -1737,45 +1790,128 @@ img {
   #inner-footer .nav li {
     border-bottom: 0px; }
 
-/********************
-WORDPRESS BODY CLASSES
-style a page via class
-********************/
-/* for sites that are read right to left (i.e. hebrew) */
-/* home page */
-/* blog template page */
-/* archive page */
-/* date archive page */
-/* replace the number to the corresponding page number */
-/* search page */
-/* search result page */
-/* no results search page */
-/* individual paged search (i.e. body.search-paged-3) */
-/* 404 page */
-/* single post page */
-/* individual post page by id (i.e. body.postid-73) */
-/* individual paged single (i.e. body.single-paged-3) */
-/* attatchment page */
-/* individual attatchment page (i.e. body.attachmentid-763) */
-/* style mime type pages */
-/* author page */
-/* user nicename (i.e. body.author-samueladams) */
-/* paged author archives (i.e. body.author-paged-4) for page 4 */
-/* category page */
-/* individual category page (i.e. body.category-6) */
-/* replace the number to the corresponding page number */
-/* tag page */
-/* individual tag page (i.e. body.tag-news) */
-/* replace the number to the corresponding page number */
-/* custom page template page */
-/* individual page template (i.e. body.page-template-contact-php */
-/* replace the number to the corresponding page number */
-/* parent page template */
-/* child page template */
-/* replace the number to the corresponding page number */
-/* if user is logged in */
-/* paged items like search results or archives */
-/* individual paged (i.e. body.paged-3) */
+.landing-page #inner-content {
+  height: calc(100vh - 75px); }
+
+.landing-page .h1, .landing-page h1 {
+  font-size: 1em;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0;
+  padding: .4em .8em;
+  text-transform: uppercase;
+  line-height: 1; }
+
+.landing-page .h2, .landing-page h2 {
+  font-weight: bold;
+  margin: 1em 0; }
+
+.landing-page .founders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0; }
+  .landing-page .founders .founders-background {
+    background-size: cover;
+    background-position: 50%;
+    -webkit-filter: url("#colors");
+            filter: url("#colors");
+    margin: 0;
+    padding: 0; }
+  .landing-page .founders .overlay {
+    background-color: rgba(28, 30, 30, 0.6);
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute; }
+    .landing-page .founders .overlay article {
+      width: 80%;
+      text-align: center;
+      color: #fff;
+      margin-top: -30%; }
+      .landing-page .founders .overlay article .h1, .landing-page .founders .overlay article h1 {
+        background-color: #437bd9; }
+
+.landing-page .developers {
+  background-color: #437bd9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0; }
+  .landing-page .developers .overlay {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute; }
+    .landing-page .developers .overlay article {
+      width: 80%;
+      text-align: center;
+      color: #fff;
+      margin-top: -30%; }
+      .landing-page .developers .overlay article .h1, .landing-page .developers .overlay article h1 {
+        background-color: #1c1e1e; }
+
+.landing-page .testimonials {
+  position: absolute;
+  top: 60vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .landing-page .testimonials .container {
+    background-color: #d7e9f5;
+    width: 700px;
+    padding: 2em;
+    border-bottom: 4px solid #437bd9;
+    -webkit-box-shadow: 0px -2px 3px rgba(28, 30, 30, 0.4);
+            box-shadow: 0px -2px 3px rgba(28, 30, 30, 0.4); }
+    .landing-page .testimonials .container .avatar {
+      height: 100px;
+      width: 100px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 80px; }
+    .landing-page .testimonials .container .testimonial {
+      font-style: italic;
+      padding-left: 1em; }
+      .landing-page .testimonials .container .testimonial .user {
+        font-style: normal;
+        font-size: .8em; }
+        .landing-page .testimonials .container .testimonial .user .name {
+          font-weight: bold; }
+
 /*********************
 LAYOUT & GRID STYLES
 *********************/
@@ -1787,12 +1923,12 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 a, a:visited {
-  color: #2980b9;
+  color: #437bd9;
   /* on hover */
   /* on click */
   /* mobile tap color */ }
   a:hover, a:focus, a:visited:hover, a:visited:focus {
-    color: #216693; }
+    color: #2863c6; }
   a:link, a:visited:link {
     /*
 		this highlights links on iPhones/iPads.
@@ -1841,16 +1977,13 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #000; }
+  background-color: #fff; }
 
 #logo {
   margin: 0.75em 0; }
   #logo a {
-    color: #fff; }
+    color: #1c1e1e; }
 
-/*********************
-NAVIGATION STYLES
-*********************/
 /*
 all navs have a .nav class applied via
 the wp_menu function; this is so we can
@@ -1914,15 +2047,23 @@ and more scalable.
 		*/ }
     .nav li a {
       display: block;
-      color: #fff;
+      color: #1c1e1e;
       text-decoration: none;
       padding: 0.75em;
-      /*
-			remember this is for mobile ONLY, so there's no need
-			to even declare hover styles here, you can do it in
-			the style.scss file where it's relevant. We want to
-			keep this file as small as possible!
-			*/ }
+      text-transform: uppercase; }
+    .nav li:last-child {
+      background-color: #437bd9;
+      border-radius: .3em; }
+      .nav li:last-child a {
+        color: #fff;
+        text-decoration: none; }
+        .nav li:last-child a:hover {
+          text-decoration: none;
+          border-radius: .3em;
+          background-color: #2863c6;
+          text-shadow: 1px 1px 1px rgba(28, 30, 30, 0.5);
+          -webkit-transition: all 0.2s ease-in-out;
+          transition: all 0.2s ease-in-out; }
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }
@@ -1932,13 +2073,10 @@ and more scalable.
 POSTS & CONTENT STYLES
 *********************/
 #content {
-  margin-top: 1.5em; }
+  margin-top: 0; }
 
 .hentry {
-  background-color: #fff;
-  border-radius: 3px;
-  margin-bottom: 1.5em;
-  border: 1px solid #ccc; }
+  background-color: #fff; }
   .hentry header {
     border-bottom: 1px solid #f8f9fa;
     padding: 1.5em; }
@@ -2028,7 +2166,7 @@ POSTS & CONTENT STYLES
     max-width: 100%;
     height: auto; }
   .entry-content pre {
-    background: #000;
+    background: #1c1e1e;
     color: #f8f9fa;
     font-size: 0.9em;
     padding: 1.5em;
@@ -2129,10 +2267,10 @@ PAGE NAVI STYLES
       color: #fff; }
   .pagination .current {
     cursor: default;
-    color: #5c6b80; }
+    color: #1c1e1e; }
     .pagination .current:hover, .pagination .current:focus {
       background-color: #fff;
-      color: #5c6b80; }
+      color: #1c1e1e; }
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
@@ -2244,7 +2382,7 @@ COMMENT FORM STYLES
   font-style: italic;
   margin: 0; }
   .logged-in-as a {
-    color: #5c6b80; }
+    color: #1c1e1e; }
 
 .comment-form-comment {
   margin: 1.5em 0 0.75em; }
@@ -2292,8 +2430,8 @@ FOOTER STYLES
 *********************/
 .footer {
   clear: both;
-  background-color: #000;
-  color: #f8f9fa; }
+  background-color: #fff;
+  color: #1c1e1e; }
 
 /*
 	if you checked out the link above:
@@ -2426,6 +2564,15 @@ LAYOUT & GRID STYLES
   /*********************
 HEADER STYLES
 *********************/
+  #inner-header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    #inner-header .logo img {
+      max-width: 100px; }
+  .header {
+    height: 75px; }
   /*********************
 NAVIGATION STYLES
 *********************/
@@ -2435,13 +2582,16 @@ NAVIGATION STYLES
     /* highlight current page */
     /* end current highlighters */ }
     .nav ul {
-      background: #000;
+      background: #1c1e1e;
       margin-top: 0; }
     .nav li {
+      margin-right: 1em;
       /*
 		plan your menus and drop-downs wisely.
 		*/
       /* showing sub-menus */ }
+      .nav li:last-child {
+        margin-right: 0; }
       .nav li a {
         border-bottom: 0;
         /*
@@ -2449,8 +2599,7 @@ NAVIGATION STYLES
 			has the possibility of being a mobile device.
 			*/ }
         .nav li a:hover, .nav li a:focus {
-          color: #fff;
-          text-decoration: underline; }
+          color: #2863c6; }
       .nav li ul.sub-menu,
       .nav li ul.children {
         margin-top: 0;
@@ -2547,7 +2696,9 @@ be seen on the Desktop.
 
 ******************************************************************/
   .wrap {
-    width: 1040px; } }
+    width: 1320px; }
+    .wrap--wider {
+      width: 1580px; } }
 
 /*********************
 LARGE VIEWING SIZE
