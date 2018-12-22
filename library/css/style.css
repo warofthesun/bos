@@ -2002,6 +2002,9 @@ img {
   font-weight: bold;
   margin: 1em 0; }
 
+.founders #slide_container li .right {
+  background-color: #437bd9; }
+
 .founders #slide_container li:nth-child(odd) .right {
   background-color: #1c1e1e; }
 
@@ -2043,7 +2046,7 @@ img {
   .founders #slide_container .overlay .arrow-bottom-right {
     width: 0;
     height: 0;
-    border-top: 380px solid transparent;
+    border-top: calc((100vh - 75px)/2) solid transparent;
     border-bottom: 0px solid transparent;
     border-right: 310px solid rgba(67, 123, 217, 0.25);
     position: absolute;
@@ -2051,11 +2054,11 @@ img {
     right: 0; }
 
 .founders .content:before {
-  content: "hey hey";
+  content: "";
   display: block; }
 
 .founders .content:after {
-  content: "hey yo";
+  content: "";
   display: block; }
 
 /*********************
