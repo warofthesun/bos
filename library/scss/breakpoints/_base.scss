@@ -501,6 +501,7 @@ img {
 
 		h2 {
 			font-weight: bold;
+			font-size: 1.6em;
 		}
 
 		.overlay {
@@ -682,6 +683,11 @@ img {
 		h3 {
 			color: $primary;
 		}
+
+		em {
+			font-size: 0.9em;
+			color: $primary;
+		}
 	}
 
 	.line-item {
@@ -704,6 +710,64 @@ img {
 		flex-wrap: wrap;
 	}
 
+	.contact {
+		position: relative;
+		height: 90vh;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.contact-image {
+		position: relative;
+		.overlay {
+			background-color: rgba($black, 0.6);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+		}
+	}
+
+	.contact-form {
+		.bullets {
+			position: relative;
+
+			li {
+				 margin-bottom:1em;
+
+				 i {
+					 font-style:normal;
+					 margin-left: -1em;
+					 margin-right: .5em;
+					 font-weight:bold;
+					 color: $primary;
+				 }
+			}
+		}
+	}
+
+	.form {
+		.right-lines {
+			background-image: url('../images/lines_bottom-right-blue_darker.png');
+			background-size: 300px;
+			background-position: right bottom;
+			background-repeat:no-repeat;
+			height: 30px;
+			margin-top: -30px;
+		}
+	}
+
+	.disclaimer {
+		background-color: $primary-lt;
+		padding: 2em;
+		text-align: center;
+		color: $black;
+		width: 100%;
+	}
 }
 
 #contact {

@@ -2189,7 +2189,8 @@ img {
             filter: url("#colors");
     width: 100%; }
   .developers .slide h2 {
-    font-weight: bold; }
+    font-weight: bold;
+    font-size: 1.6em; }
   .developers .slide .overlay {
     background-color: rgba(67, 123, 217, 0.8);
     width: 100%;
@@ -2373,6 +2374,9 @@ img {
     text-align: center; }
   .developers .product_development h3 {
     color: #437bd9; }
+  .developers .product_development em {
+    font-size: 0.9em;
+    color: #437bd9; }
 
 .developers .line-item {
   width: calc(100%/7);
@@ -2401,6 +2405,60 @@ img {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
+
+.developers .contact {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+.developers .contact-image {
+  position: relative; }
+  .developers .contact-image .overlay {
+    background-color: rgba(28, 30, 30, 0.6);
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute; }
+
+.developers .contact-form .bullets {
+  position: relative; }
+  .developers .contact-form .bullets li {
+    margin-bottom: 1em; }
+    .developers .contact-form .bullets li i {
+      font-style: normal;
+      margin-left: -1em;
+      margin-right: .5em;
+      font-weight: bold;
+      color: #437bd9; }
+
+.developers .form .right-lines {
+  background-image: url("../images/lines_bottom-right-blue_darker.png");
+  background-size: 300px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  height: 30px;
+  margin-top: -30px; }
+
+.developers .disclaimer {
+  background-color: #d7e9f5;
+  padding: 2em;
+  text-align: center;
+  color: #1c1e1e;
+  width: 100%; }
 
 #contact .top-row {
   background-color: #437bd9;

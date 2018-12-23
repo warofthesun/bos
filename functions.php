@@ -65,9 +65,9 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'starter-thumb-600', 600, 150, true );
-add_image_size( 'starter-thumb-300', 300, 100, true );
-add_image_size( 'gallery-image', 680, 450, true );
+//add_image_size( 'starter-thumb-600', 600, 150, true );
+//add_image_size( 'starter-thumb-300', 300, 100, true );
+//add_image_size( 'gallery-image', 680, 450, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -87,7 +87,7 @@ for the 600 x 150 image:
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
-*/
+
 
 add_filter( 'image_size_names_choose', 'starter_custom_image_sizes' );
 
