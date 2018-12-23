@@ -296,7 +296,7 @@ img {
 				@media only screen and (min-width: 64em) {
 					padding: 4em;
 				}
-				
+
 				display: flex;
 				align-items: center;
 				position: relative;
@@ -455,7 +455,7 @@ img {
 	    text-decoration: none !important;
 			@include transition(all 0.2s ease-in-out)
 
-			&:hover {
+			&:hover, &:active, &:focus {
 				color: $white;
 			}
 	  }

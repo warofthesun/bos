@@ -2146,7 +2146,7 @@ img {
     text-decoration: none !important;
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
-    .founders .slide-nav a:hover {
+    .founders .slide-nav a:hover, .founders .slide-nav a:active, .founders .slide-nav a:focus {
       color: #fdfdfd; }
 
 .founders #nav-items {
