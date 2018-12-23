@@ -14,6 +14,10 @@ and will be used across all viewports.
 /*********************
 GENERAL STYLES
 *********************/
+.collapse {
+	margin: 0;
+	padding: 0;
+}
 
 #main {
 	position: relative;
@@ -385,7 +389,7 @@ img {
 		}
 	}
 
-	.navlinks {
+	.slide-nav {
 	  margin-top: 5px;
 	  position: fixed;
 	  left: -35px;
@@ -400,7 +404,7 @@ img {
 	  }
 	}
 
-	#mynav {
+	#nav-items {
 	  list-style: none;
 	  li {
 	    float: left;
@@ -409,6 +413,92 @@ img {
 	}
 }
 
+#contact {
+	.top-row {
+		background-color: $primary;
+		position: relative;
+		display: flex;
+
+		.arrow {
+			&-bottom-left {
+				width: 0;
+				height: 0;
+				border-top: calc((100vh - 75px)/2) solid transparent;
+				border-bottom: 0px solid transparent;
+				border-left: 470px solid rgba($white, 0.15);
+				position: absolute;
+				bottom: 0;
+				left: 0;
+			}
+
+			&-bottom-right {
+				width: 0;
+				height: 0;
+				border-top: calc((100vh - 75px)/2) solid transparent;
+				border-bottom: 0px solid transparent;
+				border-right: 470px solid rgba($white, 0.15);
+				position: absolute;
+				bottom: 0;
+				right: 0;
+			}
+		}
+	}
+
+	.elements {
+		height: 80%;
+		align-self: center;
+
+		.left-lines {
+			background-image: url('../images/lines_top-right-blue.png');
+			background-size: 300px;
+			background-position: left top;
+			background-repeat:no-repeat;
+		}
+
+		.right-lines {
+			background-image: url('../images/lines_bottom-left-blue.png');
+			background-size: 300px;
+			background-position: right bottom;
+			background-repeat:no-repeat;
+		}
+	}
+
+	.bottom-row {
+		background-size: cover;
+	}
+
+	.contact-form {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		h2 {
+			color: $white;
+			text-align: center;
+		}
+
+		.form {
+			background-color: $white;
+			padding: 3em;
+			box-shadow: $box-shadow;
+
+			h3 {
+				color: $black;
+				text-align: center;
+				font-size: 1.3em;
+			}
+
+			p {
+				font-size: 0.8em;
+				text-align: center;
+				padding: 0 1em;
+			}
+		}
+	}
+}
 /*********************
 LAYOUT & GRID STYLES
 *********************/

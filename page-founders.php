@@ -8,29 +8,38 @@
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 								<?php if( have_rows('content_slides') ): ?>
 								<style>
-								
+
 									<?php while( have_rows('content_slides') ): the_row();
 										$slide_number = get_sub_field('slide_number');
 										$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
 									?>
-									a[id="<?php echo $slide_name; ?>"]:target ~ #slide_container li.slide {
-										-webkit-transform: translateY(-<?php echo $slide_number; ?>00%);
-										transform: translateY(-<?php echo $slide_number; ?>00%);
-									}
-									<?php endwhile;  ?>
+										a[id="<?php echo $slide_name; ?>"]:target ~ #slide_container li.slide {
+											-webkit-transform: translateY(-<?php echo $slide_number; ?>00%);
+											transform: translateY(-<?php echo $slide_number; ?>00%);
+										}
+									<?php endwhile; endif; ?>
+
+									<?php if( have_posts() ): the_post();?>
+										a[id="contact"]:target ~ #slide_container li.slide {
+											-webkit-transform: translateY(-<?php the_field('slide_number'); ?>00%);
+											transform: translateY(-<?php the_field('slide_number'); ?>00%);
+										}
+									<?php endif; ?>
 
 								</style>
-
-							<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
-								<a id="<?php echo $slide_name; ?>" style="display:none;"></a>
-							<?php endwhile; ?>
-							<div class="navlinks">
-								<ul id="mynav">
-									<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
-									<li><a href="#<?php echo $slide_name; ?>"><?php echo $slide_name; ?></a></li>
-								<?php endwhile; endif;?>
-								</ul>
-							</div>
+								<?php if( have_rows('content_slides') ): ?>
+								<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
+									<a id="<?php echo $slide_name; ?>" style="display:none;"></a>
+								<?php endwhile; ?>
+									<a id="contact" style="display:none;"></a>
+									<div class="slide-nav">
+										<ul id="nav-items">
+											<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
+												<li><a href="#<?php echo $slide_name; ?>"><?php echo $slide_name; ?></a></li>
+											<?php endwhile; endif;?>
+												<li><a href="#contact">contact</a></li>
+										</ul>
+									</div>
 							<?php if( have_rows('content_slides') ): ?>
 						  <ul id="slide_container">
 								<?php while( have_rows('content_slides') ): the_row();
@@ -75,6 +84,38 @@
 						      </li>
 
 							<?php endwhile; endif; ?>
+
+							<li class="slide col-sm-12 row contact" id="contact">
+								<?php
+									$slide_image = get_field('image');
+									$size = "full"; // (thumbnail, medium, large, full or custom size)
+									$image = wp_get_attachment_image_src( $slide_image, $size );
+									// url = $image[0];
+									// width = $image[1];
+									// height = $image[2];
+								?>
+								<div class="col-xs-12 collapse top-row">
+									<div class="arrow-bottom-left"></div>
+									<div class="wrap elements row">
+										<div class="col-xs-6 left-lines"></div>
+										<div class="col-xs-6 right-lines"></div>
+									</div>
+									<div class="arrow-bottom-right"></div>
+								</div>
+								<div class="col-xs-12 collapse bottom-row" style="background-image:url('<?php echo $image[0]; ?>');">
+									<div class="overlay"></div>
+								</div>
+								<div class="col-xs-12 contact-form">
+									<div class="col-xs-10 col-md-4">
+										<h2><?php the_field('headline'); ?></h2>
+										<div class="form">
+											<h3><?php the_field('form_headline'); ?></h3>
+											<?php the_field('form'); ?>
+										</div>
+									</div>
+								</div>
+							</li>
+
 						  </ul>
 
 						</main>
