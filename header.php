@@ -31,7 +31,7 @@
             <meta name="theme-color" content="#121212">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
+		
 		<?php wp_head(); ?>
 
 		<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>

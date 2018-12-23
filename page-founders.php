@@ -30,18 +30,20 @@
 								<?php if( have_rows('content_slides') ): ?>
 								<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
 									<a id="<?php echo $slide_name; ?>" style="display:none;"></a>
-								<?php endwhile; ?>
+								<?php endwhile; endif;?>
 									<a id="contact" style="display:none;"></a>
-									<div class="slide-nav">
-										<ul id="nav-items">
-											<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
-												<li><a href="#<?php echo $slide_name; ?>"><?php echo $slide_name; ?></a></li>
-											<?php endwhile; endif;?>
-												<li><a href="#contact">contact</a></li>
-										</ul>
-									</div>
+
 							<?php if( have_rows('content_slides') ): ?>
+								<div class="slide-nav">
+									<ul id="nav-items">
+										<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); $nav_item =  get_sub_field('slide_name'); ?>
+											<li><a href="#<?php echo $slide_name; ?>"><?php echo $nav_item; ?></a></li>
+										<?php endwhile;?>
+											<li><a href="#contact">contact</a></li>
+									</ul>
+								</div>
 						  <ul id="slide_container">
+
 								<?php while( have_rows('content_slides') ): the_row();
 									$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
 									$headline = get_sub_field('headline');

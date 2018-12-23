@@ -128,4 +128,12 @@ jQuery(document).ready(function($) {
 				$("#mobile-nav").toggleClass("show");
 			});
 
+	$(function() {
+		  $('.slide-nav ul li:first-child').addClass('selected');
+		});
+
+	$(".slide-nav ul li a").click(function() {
+		$(this).parent().addClass('selected').siblings().removeClass('selected');
+	});
+
 }); /* end of as page load scripts */
