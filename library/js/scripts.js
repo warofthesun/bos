@@ -127,11 +127,13 @@ jQuery(document).ready(function($) {
         $(".nav").toggleClass("show");
 				$("#mobile-nav").toggleClass("show");
 			});
-  /*
-   * Let's fire off the gravatar function
-   * You can remove this if you don't need it
-  */
-  loadGravatars();
 
+	$(function() {
+		  $('.slide-nav ul li:first-child').addClass('selected');
+		});
+
+	$(".slide-nav ul li a").click(function() {
+		$(this).parent().addClass('selected').siblings().removeClass('selected');
+	});
 
 }); /* end of as page load scripts */

@@ -23,7 +23,7 @@ $alert-green:       #e6efc2;
 $alert-blue:        #d5edf8;
 
 $black:             #1c1e1e;
-$white:             #fff;
+$white:             #fdfdfd;
 
 $light-gray:        #f8f9fa;
 $gray:              #eaedf2;
@@ -47,3 +47,5 @@ Here's a great tutorial on how to
 use color variables properly:
 http://sachagreif.com/sass-color-variables/
 */
+
+$box-shadow: 0px 0px 9px 3px rgba($black, 0.4);
