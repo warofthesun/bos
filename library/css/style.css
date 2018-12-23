@@ -1760,11 +1760,15 @@ GENERAL STYLES
     .flex--row_middle {
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center; }
-    .flex--row_end {
-      -webkit-box-pack: end;
-          -ms-flex-pack: end;
-              justify-content: flex-end; }
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    @media only screen and (min-width: 64em) {
+      .flex--row_end {
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; } }
 
 body {
   font-family: Helvetica, Arial, sans-serif;
@@ -1819,6 +1823,9 @@ img {
 
 .landing-page #inner-content, .founders #inner-content {
   height: calc(100vh - 75px); }
+  @media only screen and (max-width: 64em) {
+    .landing-page #inner-content, .founders #inner-content {
+      margin-bottom: 150px; } }
 
 .landing-page .founders {
   display: -webkit-box;
@@ -1826,6 +1833,9 @@ img {
   display: flex;
   margin: 0;
   padding: 0; }
+  @media only screen and (max-width: 64em) {
+    .landing-page .founders {
+      position: relative; } }
   .landing-page .founders .founders-background {
     background-size: cover;
     background-position: 50%;
@@ -1854,8 +1864,10 @@ img {
     .landing-page .founders .overlay article {
       width: 80%;
       text-align: center;
-      color: #fdfdfd;
-      margin-top: -30%; }
+      color: #fdfdfd; }
+      @media only screen and (min-width: 64em) {
+        .landing-page .founders .overlay article {
+          margin-top: -30%; } }
       .landing-page .founders .overlay article .h1, .landing-page .founders .overlay article h1 {
         background-color: #437bd9;
         padding: .5em 1em; }
@@ -1870,6 +1882,9 @@ img {
           justify-content: center;
   margin: 0;
   padding: 0; }
+  @media only screen and (max-width: 64em) {
+    .landing-page .developers {
+      position: relative; } }
   .landing-page .developers .overlay {
     width: 100%;
     height: 100%;
@@ -1893,16 +1908,16 @@ img {
     .landing-page .developers .overlay article {
       width: 80%;
       text-align: center;
-      color: #fdfdfd;
-      margin-top: -30%; }
+      color: #fdfdfd; }
+      @media only screen and (min-width: 64em) {
+        .landing-page .developers .overlay article {
+          margin-top: -30%; } }
       .landing-page .developers .overlay article .h1, .landing-page .developers .overlay article h1 {
         font-size: 1em;
         background-color: #1c1e1e;
         padding: .5em 1em; }
 
 .landing-page .testimonials {
-  position: absolute;
-  top: 60vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1910,13 +1925,20 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  @media only screen and (min-width: 64em) {
+    .landing-page .testimonials {
+      position: absolute;
+      top: 60vh; } }
   .landing-page .testimonials .container {
     background-color: #d7e9f5;
-    width: 700px;
+    width: 100%;
     padding: 2em;
     border-bottom: 4px solid #437bd9;
     -webkit-box-shadow: 0px -2px 3px rgba(28, 30, 30, 0.4);
             box-shadow: 0px -2px 3px rgba(28, 30, 30, 0.4); }
+    @media only screen and (min-width: 64em) {
+      .landing-page .testimonials .container {
+        width: 700px; } }
     .landing-page .testimonials .container .avatar {
       height: 100px;
       width: 100px;
@@ -2616,9 +2638,11 @@ and more scalable.
 #mobile-nav {
   text-align: center;
   margin-bottom: 1em;
-  margin-top: -2em;
+  margin-top: 2em;
   -webkit-transition: all .5s;
-  transition: all .5s; }
+  transition: all .5s;
+  position: relative;
+  z-index: 99; }
   #mobile-nav.show {
     margin-top: 0em;
     padding: .5em;
@@ -3197,10 +3221,12 @@ GENERAL STYLES
 *********************/
   /*********************
 LAYOUT & GRID STYLES
-*********************/
-  .wrap {
-    width: 760px; }
-  /*********************
+
+.wrap {
+	width: 760px;
+}
+
+/*********************
 HEADER STYLES
 *********************/
   #inner-header {

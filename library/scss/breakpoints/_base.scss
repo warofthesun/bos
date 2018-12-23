@@ -37,10 +37,13 @@ GENERAL STYLES
 
 		&_middle {
 			align-items: center;
+			justify-content: center;
 		}
 
 		&_end {
-			justify-content: flex-end;
+			@media only screen and (min-width: 64em) {
+				justify-content: flex-end;
+			}
 		}
 	}
 }
@@ -105,6 +108,10 @@ img {
 .landing-page, .founders {
 	#inner-content {
 		height: calc(100vh - 75px);
+
+		@media only screen and (max-width: 64em) {
+			margin-bottom: 150px;
+		}
 	}
 }
 
@@ -114,6 +121,10 @@ img {
 		display: flex;
 		margin: 0;
 		padding: 0;
+
+		@media only screen and (max-width: 64em) {
+			position: relative;
+		}
 
 		.founders-background {
 			background-size: cover;
@@ -137,7 +148,10 @@ img {
 				width: 80%;
 				text-align: center;
 				color: $white;
-				margin-top: -30%;
+
+				@media only screen and (min-width: 64em) {
+					margin-top: -30%;
+				}
 
 				.h1, h1 {
 					background-color: $primary;
@@ -152,6 +166,10 @@ img {
 		justify-content: center;
 		margin: 0;
 		padding: 0;
+
+		@media only screen and (max-width: 64em) {
+			position: relative;
+		}
 
 		.overlay {
 			width: 100%;
@@ -169,7 +187,11 @@ img {
 				width: 80%;
 				text-align: center;
 				color: $white;
-				margin-top: -30%;
+
+				@media only screen and (min-width: 64em) {
+					margin-top: -30%;
+				}
+
 
 				.h1, h1 {
 					font-size: 1em;
@@ -181,18 +203,25 @@ img {
 	}
 
 	.testimonials {
-		position: absolute;
-		top: 60vh;
 		display: flex;
 		width: 100%;
 		justify-content: center;
 
+		@media only screen and (min-width: 64em) {
+			position: absolute;
+			top: 60vh;
+		}
+
 		.container {
 			background-color: $primary-lt;
-			width: 700px;
+			width: 100%;
 			padding: 2em;
 			border-bottom: 4px solid $primary;
 			box-shadow: 0px -2px 3px rgba($black, 0.4);
+
+			@media only screen and (min-width: 64em) {
+				width: 700px;
+			}
 
 			.avatar {
 				height: 100px;
@@ -218,6 +247,7 @@ img {
 			}
 		}
 	}
+
 }
 
 .founders {
@@ -967,8 +997,10 @@ and more scalable.
 #mobile-nav {
 	text-align: center;
 	margin-bottom: 1em;
-	margin-top:-2em;
+	margin-top:2em;
 	transition: all .5s;
+	position: relative;
+	z-index: 99;
 
 	&.show {
 		margin-top: 0em;
