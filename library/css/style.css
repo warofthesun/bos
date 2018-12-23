@@ -1412,10 +1412,14 @@ and it will create a button dependant on those variables.
     border: 2px solid #437bd9; }
     .btn--outline_blue:hover {
       background-color: #fdfdfd; }
+    .btn--outline_blue:visited {
+      color: #fdfdfd; }
   .btn--outline_black {
     border: 2px solid #1c1e1e; }
     .btn--outline_black:hover {
       background-color: #fdfdfd; }
+    .btn--outline_black:visited {
+      color: #fdfdfd; }
   .btn--outline i {
     font-weight: normal; }
 
@@ -1882,7 +1886,10 @@ img {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    position: absolute; }
+    position: absolute;
+    background-image: url(../images/dev-background.png);
+    background-size: cover;
+    background-repeat: no-repeat; }
     .landing-page .developers .overlay article {
       width: 80%;
       text-align: center;
@@ -2609,7 +2616,8 @@ and more scalable.
       text-transform: uppercase; }
     .nav li:last-child {
       background-color: #437bd9;
-      border-radius: .3em; }
+      border-radius: .3em;
+      font-weight: bold; }
       .nav li:last-child a {
         color: #fdfdfd;
         text-decoration: none; }
@@ -2619,7 +2627,8 @@ and more scalable.
           background-color: #2863c6;
           text-shadow: 1px 1px 1px rgba(28, 30, 30, 0.5);
           -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out; }
+          transition: all 0.2s ease-in-out;
+          color: #fdfdfd; }
     .nav li ul.sub-menu li a,
     .nav li ul.children li a {
       padding-left: 30px; }

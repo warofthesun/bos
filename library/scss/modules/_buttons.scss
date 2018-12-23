@@ -93,6 +93,10 @@ and it will create a button dependant on those variables.
       &:hover {
         background-color: $white;
       }
+
+      &:visited {
+        color: $white;
+      }
     }
 
     &_black {
@@ -100,6 +104,10 @@ and it will create a button dependant on those variables.
 
       &:hover {
         background-color: $white;
+      }
+
+      &:visited {
+        color: $white;
       }
     }
 
