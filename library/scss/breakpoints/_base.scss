@@ -626,6 +626,18 @@ img {
 		padding: 6em 0;
 		width: 100%;
 		display: flex;
+
+		h2 {
+			color: $white;
+			text-align: center;
+		}
+
+		img {
+			&.cloud {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 
 	.feature {
@@ -647,6 +659,40 @@ img {
 		flex-direction: column;
 		width: 100%;
 		text-align: center;
+	}
+
+	.product_development {
+		padding: 4em;
+		display: flex;
+		flex-direction: column;
+
+		h2 {
+			text-align: center;
+		}
+
+		h3 {
+			color: $primary;
+		}
+	}
+
+	.line-item {
+		width: calc(100%/7);
+		height: 40px;
+		justify-content: center;
+		display: flex;
+		align-items: center;
+		margin-top: 1em;
+
+		img {
+			width: 80%;
+			height: auto;
+		}
+	}
+
+	.partner-logos {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
 	}
 
 }

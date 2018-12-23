@@ -2317,6 +2317,12 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
+  .developers .dark h2 {
+    color: #fdfdfd;
+    text-align: center; }
+  .developers .dark img.cloud {
+    width: 100%;
+    height: auto; }
 
 .developers .feature img {
   width: 100%;
@@ -2338,6 +2344,48 @@ img {
           flex-direction: column;
   width: 100%;
   text-align: center; }
+
+.developers .product_development {
+  padding: 4em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .developers .product_development h2 {
+    text-align: center; }
+  .developers .product_development h3 {
+    color: #437bd9; }
+
+.developers .line-item {
+  width: calc(100%/7);
+  height: 40px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em; }
+  .developers .line-item img {
+    width: 80%;
+    height: auto; }
+
+.developers .partner-logos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 #contact .top-row {
   background-color: #437bd9;
