@@ -7,43 +7,74 @@
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 							<style>
+								<?php if( have_rows('hero_slides') ): ?>
+								<?php while( have_rows('hero_slides') ): the_row();
+									$slide_number = get_sub_field('slide_number');
+									$slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
 
-									a[id="thing"]:target ~ #slide_container li.slide {
-										-webkit-transform: translateX(-100%);
-										transform: translateX(-100%);
-									}
-
+										a[id="<?php echo $slide_name; ?>"]:target ~ #slide_container li.slide {
+											-webkit-transform: translateX(-<?php echo $slide_number; ?>00%);
+											transform: translateX(-<?php echo $slide_number; ?>00%);
+										}
+								<?php endwhile; ?>
 							</style>
 								<div class="hero_slider">
-									<a id="thing" style="display:none;"></a>
-
+									<?php while( have_rows('hero_slides') ): the_row();
+										$slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
+										<a id="<?php echo $slide_name; ?>" style="display:none;"></a>
+									<?php endwhile; ?>
 									<ul id="slide_container">
+										<?php while( have_rows('hero_slides') ): the_row();
+											$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
+											$slide_image = get_sub_field('image');
+											?>
 										<li class="slide col-sm-12 row" id="slide_<?php echo $slide_name; ?>" >
-											<div class="slide_background" style="background-image: url('<?php echo get_template_directory_uri(); ?>/library/images/ship-more.jpg');"></div>
+											<?php
+												$size = "full"; // (thumbnail, medium, large, full or custom size)
+												$image = wp_get_attachment_image_src( $slide_image, $size );
+												// url = $image[0];
+												// width = $image[1];
+												// height = $image[2];
+											?>
+											<div class="slide_background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 											<div class="overlay">
 												<div class="arrow-bottom-left"></div>
 												<div class="wrap">
 													<div class="design-element__top"></div>
 													<div class="content col-xs-8" style="text-align:center;">
-														<h2>Ship more. Get more done.</h2>
-														<p>What Infrastructure-as-a-Service (IaaS) and Platform-as-a-Service (PaaS) have done for Operations, BOS Framework-as-a-Service does for business application development. Stop building the same backend components you’ve built over and over again and start delivering value faster and more scalably on the BOS framework.
-														</p>
+														<h2><?php the_sub_field('headline'); ?></h2>
+														<?php the_sub_field('content'); ?>
 													</div>
 													<div class="design-element__bottom"></div>
 												</div>
 												<div class="arrow-top-right"></div>
 											</div>
 										</li>
+									<?php endwhile; ?>
 									</ul>
 									<div class="slide-nav">
 										<ul id="nav-items">
-												<li><a href="#thing"></a></li>
+											<?php while( have_rows('hero_slides') ): the_row();
+												$slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
+												<li><a href="#<?php echo $slide_name; ?>"></a></li>
+											<?php endwhile; endif; ?>
 										</ul>
 									</div>
 								</div>
-
 						</main>
-
+						<article class="dark">
+							<div class="wrap row" style="color:white;">
+								<?php if( have_rows('feature_set') ): while( have_rows('feature_set') ): the_row(); ?>
+								<div class="col-xs-12 col-md-4 feature" style="text-align:center;">
+									<img src="<?php the_sub_field('feature_icon'); ?>"/>
+									<h2><?php the_sub_field('headline'); ?></h2>
+									<p>
+										<?php the_sub_field('content'); ?>
+									</p>
+								</div>
+								<?php endwhile; endif; ?>
+							</div>
+						</article>
 				</div>
 
 			</div>

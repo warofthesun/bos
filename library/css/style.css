@@ -2310,6 +2310,22 @@ img {
       border-radius: 20px;
       border: 0; }
 
+.developers .dark {
+  background-color: #1c1e1e;
+  padding: 6em 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.developers .feature img {
+  width: 100%;
+  height: auto;
+  max-width: 80px; }
+
+.developers .feature p {
+  padding: 0 1em; }
+
 #contact .top-row {
   background-color: #437bd9;
   position: relative;
