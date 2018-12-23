@@ -1977,13 +1977,15 @@ img {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  overflow-x: hidden;
-  overflow-y: hidden;
   margin: 0; }
+  @media only screen and (min-width: 64em) {
+    .founders #slide_container {
+      overflow-x: hidden;
+      overflow-y: hidden; } }
   .founders #slide_container li .right {
     background-color: #437bd9;
     color: #fdfdfd;
-    padding: 4em;
+    padding: 2em;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1991,6 +1993,9 @@ img {
         -ms-flex-align: center;
             align-items: center;
     position: relative; }
+    @media only screen and (min-width: 64em) {
+      .founders #slide_container li .right {
+        padding: 4em; } }
     .founders #slide_container li .right h1, .founders #slide_container li .right .h1 {
       color: #1c1e1e; }
   .founders #slide_container li:nth-child(odd) .right {
@@ -2133,6 +2138,9 @@ img {
       -ms-flex-align: center;
           align-items: center;
   z-index: 10; }
+  @media only screen and (max-width: 64em) {
+    .founders .slide-nav {
+      display: none; } }
   .founders .slide-nav a {
     color: #fdfdfd;
     text-decoration: none !important;
@@ -2523,7 +2531,8 @@ img {
     background-repeat: no-repeat; }
 
 #contact .bottom-row {
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
 
 #contact .contact-form {
   position: absolute;

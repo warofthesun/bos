@@ -60,13 +60,13 @@
 											// width = $image[1];
 											// height = $image[2];
 										?>
-						          <div class="col-xs-6 left founders-background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-											<div class="col-xs-6 overlay">
+						          <div class="col-xs-0 col-md-6 left founders-background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+											<div class="col-xs-0 col-md-6 overlay">
 												<div class="arrow-bottom-left"></div>
 												<div class="arrow-bottom-right"></div>
 											</div>
-											<div class="col-xs-6 right">
-												<div class="col-xs-11">
+											<div class="col-xs-12 col-md-6 right">
+												<div class="col-xs-12 col-md-11">
 													<div class="design-element__top"></div>
 													<div class="content col-xs-12">
 														<h1><?php echo $headline; ?></h1>
@@ -108,7 +108,7 @@
 									<div class="overlay"></div>
 								</div>
 								<div class="col-xs-12 contact-form">
-									<div class="col-xs-10 col-md-4">
+									<div class="col-xs-12 col-md-4">
 										<h2><?php the_field('headline'); ?></h2>
 										<div class="form">
 											<h3><?php the_field('form_headline'); ?></h3>

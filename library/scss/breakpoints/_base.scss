@@ -279,15 +279,24 @@ img {
 	  bottom: 0px;
 	  left: 0px;
 	  right: 0px;
-	  overflow-x: hidden;
-	  overflow-y: hidden;
+
+		@media only screen and (min-width: 64em) {
+			overflow-x: hidden;
+		  overflow-y: hidden;
+		}
+
 	  margin: 0;
 
 		li {
 			.right {
 				background-color: $primary;
 				color:$white;
-				padding: 4em;
+				padding: 2em;
+
+				@media only screen and (min-width: 64em) {
+					padding: 4em;
+				}
+				
 				display: flex;
 				align-items: center;
 				position: relative;
@@ -436,6 +445,10 @@ img {
     display: flex;
     align-items: center;
 	  z-index: 10;
+
+		@media only screen and (max-width: 64em) {
+			display: none;
+		}
 
 	  a {
 	    color: $white;
@@ -852,6 +865,7 @@ img {
 
 	.bottom-row {
 		background-size: cover;
+		position: relative;
 	}
 
 	.contact-form {
