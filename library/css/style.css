@@ -1784,17 +1784,21 @@ img {
   width: 100%;
   max-width: 200px; }
 
-#inner-footer .nav {
-  opacity: 1;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: auto;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
-  #inner-footer .nav li {
-    border-bottom: 0px; }
+#inner-footer {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  #inner-footer .nav {
+    opacity: 1;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    #inner-footer .nav li {
+      border-bottom: 0px; }
 
 .h1, h1 {
   font-size: 1em;
@@ -1849,7 +1853,8 @@ img {
       color: #fdfdfd;
       margin-top: -30%; }
       .landing-page .founders .overlay article .h1, .landing-page .founders .overlay article h1 {
-        background-color: #437bd9; }
+        background-color: #437bd9;
+        padding: .5em 1em; }
 
 .landing-page .developers {
   background-color: #437bd9;
@@ -1884,7 +1889,9 @@ img {
       color: #fdfdfd;
       margin-top: -30%; }
       .landing-page .developers .overlay article .h1, .landing-page .developers .overlay article h1 {
-        background-color: #1c1e1e; }
+        font-size: 1em;
+        background-color: #1c1e1e;
+        padding: .5em 1em; }
 
 .landing-page .testimonials {
   position: absolute;
@@ -1914,7 +1921,8 @@ img {
       padding-left: 1em; }
       .landing-page .testimonials .container .testimonial .user {
         font-style: normal;
-        font-size: .8em; }
+        font-size: .8em;
+        margin-top: 1em; }
         .landing-page .testimonials .container .testimonial .user .name {
           font-weight: bold; }
 
@@ -2979,7 +2987,23 @@ FOOTER STYLES
 .footer {
   clear: both;
   background-color: #fdfdfd;
-  color: #1c1e1e; }
+  color: #1c1e1e;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .footer .logo img {
+    max-width: 150px; }
 
 /*
 	if you checked out the link above:

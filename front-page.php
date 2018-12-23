@@ -40,12 +40,20 @@
 								<div class="testimonials">
 									<div class="container flex">
 										<div class="col-xs-2">
+											<?php
+												$attachment_id = get_field('headshot');
+												$size = "full"; // (thumbnail, medium, large, full or custom size)
+												$image = wp_get_attachment_image_src( $attachment_id, $size );
+												// url = $image[0];
+												// width = $image[1];
+												// height = $image[2];
+											?>
 											<div class="avatar" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 										</div>
 										<div class="col-xs-10 testimonial">
-											“We were able to get a product in the hands of our users within a month and spent the following 8 weeks learning about what they needed most.”
+											<?php the_field('testimonial'); ?>
 											<div class="user">
-												<span class="name">Nathan Daniels </span><span class="title">/ Co-founder and CEO of AppWorld</span>
+												<span class="name"><?php the_field('name'); ?> </span><span class="title"><?php the_field('position'); ?></span>
 											</div>
 										</div>
 									</div>

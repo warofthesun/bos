@@ -73,6 +73,8 @@ img {
 }
 
 #inner-footer {
+	align-items: center;
+	
 	.nav {
 		opacity: 1;
 		flex-direction: row;
@@ -139,6 +141,7 @@ img {
 
 				.h1, h1 {
 					background-color: $primary;
+					padding: .5em 1em;
 				}
 			}
 		}
@@ -166,7 +169,9 @@ img {
 				margin-top: -30%;
 
 				.h1, h1 {
+					font-size: 1em;
 					background-color: $black;
+					padding: .5em 1em;
 				}
 			}
 		}
@@ -201,6 +206,7 @@ img {
 				.user {
 					font-style: normal;
 					font-size: .8em;
+					margin-top: 1em;
 
 					.name {
 						font-weight: bold;
@@ -1676,6 +1682,17 @@ FOOTER STYLES
 	clear: both;
 	background-color: $white;
 	color: $black;
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	.logo {
+		img {
+			max-width: 150px;
+		}
+	}
 }
 
 	/*
