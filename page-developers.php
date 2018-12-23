@@ -67,13 +67,20 @@
 								<?php if( have_rows('feature_set') ): while( have_rows('feature_set') ): the_row(); ?>
 								<div class="col-xs-12 col-md-4 feature" style="text-align:center;">
 									<img src="<?php the_sub_field('feature_icon'); ?>"/>
-									<h2><?php the_sub_field('headline'); ?></h2>
+									<h3><?php the_sub_field('headline'); ?></h3>
 									<p>
 										<?php the_sub_field('content'); ?>
 									</p>
 								</div>
 								<?php endwhile; endif; ?>
 							</div>
+						</article>
+						<article class="light">
+							<h2><?php the_field('architecture_headline'); ?></h2>
+							<img src="<?php the_field('architecture_image'); ?>" width="100%" height="auto"/>
+						</article>
+						<article class="product_development">
+							
 						</article>
 				</div>
 
