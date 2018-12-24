@@ -86,7 +86,7 @@
 						</nav>
 					</div>
 					<div id="mobile-nav">
-						Menu
+						Menu <i class="fas fa-chevron-down"></i>
 					</div>
 				</div>
 

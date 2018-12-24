@@ -35,6 +35,12 @@ GENERAL STYLES
 	&--row {
 		flex-direction: row;
 
+		&__mobile-collapse {
+			@media only screen and (max-width: 64em) {
+				flex-direction: column !important;
+			}
+		}
+
 		&_middle {
 			align-items: center;
 			justify-content: center;
@@ -67,6 +73,8 @@ img {
 }
 
 #inner-header {
+	margin: 1em;
+	
 	.logo {
 		img {
 			width: 100%;
@@ -520,6 +528,11 @@ img {
 		perspective: 1px;
 		background-color: $primary;
 	  @include parallax-measures;
+
+		@media only screen and (max-width: 64em) {
+			height: 100vh;
+		}
+
 	  top: 0px;
 	  bottom: 0px;
 	  left: 0px;
@@ -530,12 +543,25 @@ img {
 		display: flex;
 		flex-direction: row;
 
-		li {}
+		li {
+			@media only screen and (max-width: 64em) {
+				&:nth-child(even) {
+					.overlay {
+						background-color: rgba($black, 0.8);
+					}
+				}
+			}
+		}
 	}
 
 	.slide {
 	  z-index: 0;
 	  @include parallax-measures;
+
+		@media only screen and (max-width: 64em) {
+			height: 100vh;
+		}
+
 	  transform: translateZ(0);
 	  transition: transform 1s ease-in-out;
 	  backface-visibility: hidden;
@@ -564,6 +590,7 @@ img {
 			justify-content: center;
 			align-items: center;
 			position: absolute;
+
 
 			.wrap {
 				 height: 70%;
@@ -637,6 +664,10 @@ img {
 		justify-content: center;
 		z-index: 10;
 
+		@media only screen and (max-width: 64em) {
+			display: none;
+		}
+
 		a {
 			color: $white;
 			text-decoration: none !important;
@@ -684,7 +715,12 @@ img {
 
 	.dark {
 		background-color: $black;
-		padding: 6em 0;
+		padding: 2em 0;
+
+		@media only screen and (min-width: 64em) {
+			padding: 6em 0;
+		}
+
 		width: 100%;
 		display: flex;
 
@@ -702,6 +738,8 @@ img {
 	}
 
 	.feature {
+		margin-bottom: 2em;
+
 		img {
 			width: 100%;
 			height: auto;
@@ -715,7 +753,12 @@ img {
 
 	.light {
 		background-color: $primary-lt;
-		padding: 4em;
+		padding: 2em 0;
+
+		@media only screen and (min-width: 64em) {
+			padding: 4em;
+		}
+
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -723,7 +766,12 @@ img {
 	}
 
 	.product_development {
-		padding: 4em;
+		padding: 2em;
+
+		@media only screen and (min-width: 64em) {
+			padding: 4em;
+		}
+
 		display: flex;
 		flex-direction: column;
 
@@ -742,7 +790,12 @@ img {
 	}
 
 	.line-item {
-		width: calc(100%/7);
+		width: calc(100%/4);
+
+		@media only screen and (min-width: 64em) {
+			width: calc(100%/7);
+		}
+
 		height: 40px;
 		justify-content: center;
 		display: flex;
@@ -783,9 +836,35 @@ img {
 		}
 	}
 
+	#contact {
+		.contact-form {
+			@media only screen and (max-width: 64em) {
+				align-items: flex-start;
+
+				.form {
+					padding: 1em;
+				}
+			}
+		}
+	}
+
 	.contact-form {
+		h2 {
+			 padding: 0 2em 1em 2em;
+		}
+
+		@media only screen and (max-width: 64em) {
+			h2 {
+				font-size: 1.2em;
+			}
+		}
+
 		.bullets {
 			position: relative;
+
+			@media only screen and (max-width: 64em) {
+				padding: 1em 2em;
+			}
 
 			li {
 				 margin-bottom:1em;
@@ -913,7 +992,7 @@ LAYOUT & GRID STYLES
 *********************/
 
 .wrap {
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -1024,29 +1103,37 @@ and more scalable.
 	position: relative;
 	z-index: 99;
 
+	.fa-chevron-down {
+		@include transition(all .5s ease-in-out);
+	}
+
 	&.show {
 		margin-top: 0em;
 		padding: .5em;
 		background-color: white;
 
-		&:after {
-			content: "\f106";
-			text-align: center;
-			width: 100%;
-			display: inline;
-			font-family: fontawesome;
-
+		.fa-chevron-down {
+			transform: rotate(180deg);
 		}
+
+		//&:after {
+		//	content: "\f078";
+		//	text-align: center;
+		//	width: 100%;
+		//	display: inline;
+		//	font-family: "Font Awesome 5 Free";
+
+		//}
 	}
 
-	&:after {
-		content: "\f107";
-		text-align: center;
-		width: 100%;
-		display: inline;
-		font-family: fontawesome;
+	//&:after {
+	//	content: "\f078";
+	//	text-align: center;
+	//	width: 100%;
+	//	display: inline;
+	//	font-family: "Font Awesome 5 Free";
 
-	}
+	//}
 
 }
 

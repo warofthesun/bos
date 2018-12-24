@@ -381,9 +381,9 @@ be seen on the Desktop.
 
 ******************************************************************/
 .wrap {
-  width: 1320px; }
+  max-width: 1320px; }
   .wrap--wider {
-    width: 1580px; }
+    max-width: 1580px; }
 
 /*
 you can call the larger styles if you want, but there's really no need

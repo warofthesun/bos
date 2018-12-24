@@ -23,7 +23,7 @@
 										$slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
 										<a id="<?php echo $slide_name; ?>" style="display:none;"></a>
 									<?php endwhile; ?>
-									<ul id="slide_container">
+									<ul id="slide_container" class="flex--row__mobile-collapse">
 										<?php while( have_rows('hero_slides') ): the_row();
 											$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
 											$slide_image = get_sub_field('image');
@@ -41,7 +41,7 @@
 												<div class="arrow-bottom-left"></div>
 												<div class="wrap">
 													<div class="design-element__top"></div>
-													<div class="content col-xs-8" style="text-align:center;">
+													<div class="content col-xs-12 col-md-8" style="text-align:center;">
 														<h2><?php the_sub_field('headline'); ?></h2>
 														<?php the_sub_field('content'); ?>
 													</div>
@@ -122,15 +122,15 @@
 								<div class="overlay"></div>
 							</div>
 							<div class="col-xs-12 contact-form">
-								<div class="col-xs-10 col-md-8">
-									<h2 style="padding:0 2em 1em 2em;"><?php the_field('headline'); ?></h2>
+								<div class="col-xs-12 col-md-8">
+									<h2><?php the_field('headline'); ?></h2>
 									<div class="form">
 										<h3><?php the_field('form_headline'); ?></h3>
-										<div class="col-xs-12 collapse flex flex--row">
-											<div class="col-xs-6">
+										<div class="col-xs-12 collapse flex flex--row flex--row__mobile-collapse">
+											<div class="col-xs-12 col-md-6">
 												<?php the_field('form'); ?>
 											</div>
-											<div class="col-xs-6 bullets">
+											<div class="col-xs-12 col-md-6 bullets">
 												<?php if( have_rows('form_bullets') ): ?>
 													<ul>
 														<?php while( have_rows('form_bullets') ): the_row(); ?>
