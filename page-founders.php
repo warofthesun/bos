@@ -37,9 +37,9 @@
 								<div class="slide-nav">
 									<ul id="nav-items">
 										<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); $nav_item =  get_sub_field('slide_name'); ?>
-											<li><a href="#<?php echo $slide_name; ?>"><?php echo $nav_item; ?></a></li>
+											<li><a href="#<?php echo $slide_name; ?>"></a></li>
 										<?php endwhile;?>
-											<li><a href="#contact">contact</a></li>
+											<li><a href="#contact"></a></li>
 									</ul>
 								</div>
 						  <ul id="slide_container">

@@ -453,7 +453,11 @@ img {
 	  a {
 	    color: $white;
 	    text-decoration: none !important;
-			@include transition(all 0.2s ease-in-out)
+			width: 20px;
+	    height: 20px;
+	    display: inline-block;
+	    margin-left: -1.5em;
+	    margin-bottom: -.5em;
 
 			&:hover, &:active, &:focus {
 				color: $white;
@@ -470,11 +474,14 @@ img {
 
 			&:hover {
 				text-decoration: none;
+
+				&:before {
+					font-weight: 700;
+				}
 			}
 
 			a:hover {
 				text-decoration: none;
-				margin-left: .5em;
 			}
 
 			&:before {
@@ -488,6 +495,7 @@ img {
 				font-weight: 500;
 				font-size: 0.8em;
 				margin-right: .5em;
+				@include transition(all 0.2s ease-in-out);
 			}
 
 			&.selected {

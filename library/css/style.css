@@ -2144,8 +2144,11 @@ img {
   .founders .slide-nav a {
     color: #fdfdfd;
     text-decoration: none !important;
-    -webkit-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out; }
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-left: -1.5em;
+    margin-bottom: -.5em; }
     .founders .slide-nav a:hover, .founders .slide-nav a:active, .founders .slide-nav a:focus {
       color: #fdfdfd; }
 
@@ -2157,9 +2160,10 @@ img {
     margin: .5em 0; }
     .founders #nav-items li:hover {
       text-decoration: none; }
+      .founders #nav-items li:hover:before {
+        font-weight: 700; }
     .founders #nav-items li a:hover {
-      text-decoration: none;
-      margin-left: .5em; }
+      text-decoration: none; }
     .founders #nav-items li:before {
       content: "\f111";
       font-family: "Font Awesome 5 Free";
@@ -2170,7 +2174,9 @@ img {
       -webkit-font-smoothing: antialiased;
       font-weight: 500;
       font-size: 0.8em;
-      margin-right: .5em; }
+      margin-right: .5em;
+      -webkit-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
     .founders #nav-items li.selected {
       font-weight: bold; }
       .founders #nav-items li.selected:before {
