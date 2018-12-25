@@ -39,6 +39,8 @@
 		<script>
       window.sr = ScrollReveal({ duration: 600, reset: true, easing: 'ease-in', scale: .98, distance:'50px'});
     </script>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/library/css/cachu-slider.min.css">
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/cachu-slider.js"></script>
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
 
