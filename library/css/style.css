@@ -1713,24 +1713,81 @@ select {
   background-repeat: no-repeat;
   background-position: 97.5% center; }
 
+#carousel {
+  position: absolute;
+  top: 60vh;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+#slides {
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  z-index: 90;
+  width: 100%;
+  max-width: 700px; }
+
+#slides ul {
+  position: relative; }
+
+#slides li {
+  position: relative; }
+
+/* Styling for prev and next buttons
+.btn-bar{
+    max-width: 346px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 40px;
+    width: 100%;
+}*/
+#testimonial--buttons {
+  padding: 0 0 5px 0;
+  position: absolute;
+  z-index: 99;
+  width: 100%; }
+
+#testimonial--buttons a {
+  text-align: center;
+  display: block;
+  font-size: 2em;
+  float: left;
+  outline: 0;
+  color: #437bd9;
+  text-decoration: none;
+  display: inline-block;
+  width: 35px; }
+
+a#prev {
+  margin-left: -18px; }
+
+a#next {
+  float: right;
+  margin-right: -17px; }
+
+a#prev:hover, a#next:hover {
+  color: #d7e9f5; }
+
+.quoteContainer {
+  display: table;
+  width: 100%; }
+
 /*********************
 BASE (MOBILE) SIZE
 This are the mobile styles. It's what people see on their phones. If
 you set a great foundation, you won't need to add too many styles in
 the other stylesheets. Remember, keep it light: Speed is Important.
 *********************/
-/******************************************************************
-Site Name:
-Author:
-
-Stylesheet: Base Mobile Stylesheet
-
-Be light and don't over style since everything here will be
-loaded by mobile devices. You want to keep it as minimal as
-possible. This is called at the top of the main stylsheet
-and will be used across all viewports.
-
-******************************************************************/
 /*********************
 GENERAL STYLES
 *********************/
@@ -1933,10 +1990,6 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  @media only screen and (min-width: 64em) {
-    .landing-page .testimonials {
-      position: absolute;
-      top: 60vh; } }
   .landing-page .testimonials .container {
     background-color: #d7e9f5;
     width: 100%;

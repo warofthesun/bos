@@ -1,0 +1,70 @@
+#carousel {
+  position: absolute;
+  top: 60vh;
+  margin:0 auto;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+#slides {
+  overflow: hidden;
+  position: relative;
+  height: auto;
+  z-index: 90;
+  width: 100%;
+  max-width: 700px;
+}
+
+#slides ul {
+  position: relative;
+}
+
+#slides li {
+  position: relative;
+}
+/* Styling for prev and next buttons
+.btn-bar{
+    max-width: 346px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    top: 40px;
+    width: 100%;
+}*/
+
+#testimonial--buttons {
+  padding:0 0 5px 0;
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+}
+
+#testimonial--buttons a {
+  text-align:center;
+  display:block;
+  font-size:2em;
+  float:left;
+  outline:0;
+  color:$primary;
+  text-decoration:none;
+  display:inline-block;
+  width:35px;
+}
+a#prev {
+  margin-left: -18px;
+}
+a#next {
+  float: right;
+  margin-right: -17px;
+}
+
+a#prev:hover, a#next:hover {
+  color:$primary-lt;
+}
+
+.quoteContainer {
+  display: table;
+  width: 100%;
+}
