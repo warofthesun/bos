@@ -101,7 +101,7 @@
 							</div>
 						</article>
 
-							<article class="col-sm-12 row contact" id="contact">
+						<article class="col-sm-12 row contact" id="contact">
 							<?php
 								$slide_image = get_field('image');
 								$size = "full"; // (thumbnail, medium, large, full or custom size)

@@ -1715,6 +1715,7 @@ select {
 
 #carousel {
   position: absolute;
+  top: 60vh;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1726,12 +1727,6 @@ select {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  @media only screen and (max-width: 64em) {
-    #carousel {
-      bottom: -350px; } }
-  @media only screen and (min-width: 64em) {
-    #carousel {
-      top: 60vh; } }
 
 #slides {
   overflow: hidden;
@@ -1746,11 +1741,6 @@ select {
 
 #slides li {
   position: relative; }
-  @media only screen and (max-width: 64em) {
-    #slides li {
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center; } }
 
 /* Styling for prev and next buttons
 .btn-bar{
@@ -1883,69 +1873,10 @@ img {
     #inner-footer .nav li {
       border-bottom: 0px; }
 
-.h1, h1 {
-  font-size: 1em;
-  font-weight: bold;
-  display: inline-block;
-  margin: 0;
-  padding: .4em .8em;
-  text-transform: uppercase;
-  line-height: 1; }
-
-.h2, h2 {
-  font-weight: bold;
-  margin: 1em 0; }
-
-.landing-page #inner-content, .founders #inner-content {
+.landing-page #inner-content {
   height: calc(100vh - 75px); }
 
-.landing-page .founders {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 0;
-  padding: 0; }
-  @media only screen and (max-width: 64em) {
-    .landing-page .founders {
-      position: relative; } }
-  .landing-page .founders .founders-background {
-    background-size: cover;
-    background-position: 50%;
-    -webkit-filter: url("#colors");
-            filter: url("#colors");
-    margin: 0;
-    padding: 0; }
-  .landing-page .founders .overlay {
-    background-color: rgba(28, 30, 30, 0.6);
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: absolute; }
-    .landing-page .founders .overlay article {
-      width: 80%;
-      text-align: center;
-      color: #fdfdfd; }
-      @media only screen and (min-width: 64em) {
-        .landing-page .founders .overlay article {
-          margin-top: -30%; } }
-      .landing-page .founders .overlay article .h1, .landing-page .founders .overlay article h1 {
-        background-color: #437bd9;
-        padding: .5em 1em; }
-
-.landing-page .developers {
-  background-color: #437bd9;
+.section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1955,9 +1886,22 @@ img {
   margin: 0;
   padding: 0; }
   @media only screen and (max-width: 64em) {
-    .landing-page .developers {
+    .section {
       position: relative; } }
-  .landing-page .developers .overlay {
+  .section-one__background {
+    background-size: cover;
+    background-position: 50%;
+    -webkit-filter: url("#colors");
+            filter: url("#colors");
+    margin: 0;
+    padding: 0; }
+  .section-two {
+    background-color: #437bd9; }
+    .section-two .overlay {
+      background-image: url(../images/dev-background.png);
+      background-size: cover;
+      background-repeat: no-repeat; }
+  .section .overlay {
     width: 100%;
     height: 100%;
     display: -webkit-box;
@@ -1974,22 +1918,27 @@ img {
         -ms-flex-align: center;
             align-items: center;
     position: absolute;
-    background-image: url(../images/dev-background.png);
-    background-size: cover;
-    background-repeat: no-repeat; }
-    .landing-page .developers .overlay article {
+    z-index: 10; }
+    .section .overlay article {
       width: 80%;
       text-align: center;
       color: #fdfdfd; }
       @media only screen and (min-width: 64em) {
-        .landing-page .developers .overlay article {
+        .section .overlay article {
           margin-top: -30%; } }
-      .landing-page .developers .overlay article .h1, .landing-page .developers .overlay article h1 {
+      .section .overlay article .h1, .section .overlay article h1 {
+        padding: .5em 1em;
         font-size: 1em;
-        background-color: #1c1e1e;
-        padding: .5em 1em; }
+        display: inline;
+        text-transform: uppercase; }
+        .section .overlay article .h1.primary, .section .overlay article h1.primary {
+          background-color: #437bd9; }
+        .section .overlay article .h1.dark, .section .overlay article h1.dark {
+          background-color: #1c1e1e; }
+    .section .overlay__dark {
+      background-color: rgba(28, 30, 30, 0.6); }
 
-.landing-page .testimonials {
+.testimonials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1997,7 +1946,7 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  .landing-page .testimonials .container {
+  .testimonials .container {
     background-color: #d7e9f5;
     width: 100%;
     padding: 2em;
@@ -2005,27 +1954,29 @@ img {
     -webkit-box-shadow: 0px -2px 3px rgba(28, 30, 30, 0.4);
             box-shadow: 0px -2px 3px rgba(28, 30, 30, 0.4); }
     @media only screen and (min-width: 64em) {
-      .landing-page .testimonials .container {
+      .testimonials .container {
         width: 700px; } }
-    .landing-page .testimonials .container .avatar {
+    .testimonials .container .avatar {
       height: 100px;
       width: 100px;
       background-size: cover;
       background-position: center;
       border-radius: 80px; }
-    .landing-page .testimonials .container .testimonial {
+    .testimonials .container .testimonial {
       font-style: italic;
       padding-left: 1em; }
-      .landing-page .testimonials .container .testimonial .user {
+      .testimonials .container .testimonial .user {
         font-style: normal;
         font-size: .8em;
         margin-top: 1em; }
-        .landing-page .testimonials .container .testimonial .user .name {
+        .testimonials .container .testimonial .user .name {
           font-weight: bold; }
 
-@media only screen and (max-width: 64em) {
-  .founders #inner-content {
-    height: calc(90vh - 75px); } }
+.founders #inner-content {
+  height: calc(100vh - 75px); }
+  @media only screen and (max-width: 64em) {
+    .founders #inner-content {
+      height: calc(90vh - 75px); } }
 
 .founders .h1, .founders h1 {
   font-size: 1em;
@@ -2089,41 +2040,10 @@ img {
     position: absolute;
     bottom: 0;
     right: 0; }
-  .founders #pagepiling .founders-background {
-    background-size: cover;
-    background-position: 50%;
-    -webkit-filter: url("#colors");
-            filter: url("#colors");
-    margin: 0;
-    padding: 0; }
-  .founders #pagepiling .overlay {
-    background-color: rgba(28, 30, 30, 0.6);
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: absolute; }
 
 .founders .content {
   min-height: 400px;
   padding: 3em 0 1em 0; }
-  .founders .content:before {
-    content: "";
-    display: block; }
-  .founders .content:after {
-    content: "";
-    display: block; }
 
 .founders .slide {
   z-index: 0;

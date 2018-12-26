@@ -1,10 +1,8 @@
 <!--page-founders-->
 <?php get_header(); ?>
 <style>
-@media only screen and (min-width: 64em) {
-	.footer {
-		display: none;
-	}
+.footer {
+	display: none;
 }
 </style>
 			<div id="content" class="founders">
@@ -41,8 +39,8 @@
 											// width = $image[1];
 											// height = $image[2];
 										?>
-						          <div class="col-xs-0 col-md-6 left founders-background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-											<div class="col-xs-0 col-md-6 overlay">
+						          <div class="col-xs-0 col-md-6 left section-one__background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+											<div class="col-xs-0 col-md-6 overlay overlay__dark">
 												<div class="arrow-bottom-left"></div>
 												<div class="arrow-bottom-right"></div>
 											</div>
@@ -85,8 +83,8 @@
 									</div>
 									<div class="arrow-bottom-right"></div>
 								</div>
-								<div class="col-xs-12 collapse bottom-row" style="background-image:url('<?php echo $image[0]; ?>');">
-									<div class="overlay"></div>
+								<div class="col-xs-12 collapse bottom-row section-one__background" style="background-image:url('<?php echo $image[0]; ?>');">
+									<div class="overlay overlay__dark"></div>
 								</div>
 								<div class="col-xs-12 contact-form">
 									<div class="col-xs-12 col-md-4">

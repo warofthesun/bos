@@ -17,26 +17,26 @@
 										// width = $image[1];
 										// height = $image[2];
 									?>
-									<div class="col-xs-12 col-md-6 founders">
-										<div class="col-xs-12 founders-background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-										<div class="col-xs-12 col-md-6 overlay">
+									<div class="col-xs-12 col-md-6 section section-one">
+										<div class="col-xs-12 section-one__background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
+										<div class="col-xs-12 col-md-6 overlay overlay__dark">
 											<article>
-												<h1><?php the_field('founders_title'); ?></h1>
+												<h1 class="primary"><?php the_field('founders_title'); ?></h1>
 												<h2><?php the_field('founders_tagline'); ?></h2>
 												<a href="<?php the_field('founders_cta_link'); ?>" class="btn--outline btn--outline_blue"><?php the_field('founders_cta'); ?></a>
 											</article>
 										</div>
 									</div>
-									<div class="col-xs-12 col-md-6 developers">
+									<div class="col-xs-12 col-md-6 section section-two">
 										<div class="col-xs-12 col-md-6 overlay">
 											<article>
-												<h1><?php the_field('developers_title'); ?></h1>
+												<h1 class="dark"><?php the_field('developers_title'); ?></h1>
 												<h2><?php the_field('developers_tagline'); ?></h2>
 												<a href="<?php the_field('developers_cta_link'); ?>" class="btn--outline btn--outline_black"><?php the_field('developers_cta'); ?></a>
 											</article>
 										</div>
 									</div>
-
+								</div>
 								<?php endwhile; endif; ?>
 								<div id="carousel">
 									<div id="carousel--buttons">
@@ -55,7 +55,7 @@
 												// height = $image[2];
 											?>
 											<li class="container flex flex--row flex--row__mobile-collapse slide">
-												<div class="col-xs-6 col-md-2">
+												<div class="col-xs-0 col-md-2">
 
 													<div class="avatar" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 												</div>
@@ -70,7 +70,7 @@
 										</ul>
 									</div>
 								</div>
-							</div>
+
 						</main>
 
 				</div>
