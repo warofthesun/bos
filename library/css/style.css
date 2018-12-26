@@ -2686,7 +2686,10 @@ h5, .h5 {
 HEADER STYLES
 *********************/
 .header {
-  background-color: #fdfdfd; }
+  background-color: #fdfdfd;
+  position: relative;
+  width: 100%;
+  z-index: 99; }
 
 #logo {
   margin: 0.75em 0; }

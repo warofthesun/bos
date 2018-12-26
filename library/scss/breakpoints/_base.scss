@@ -74,7 +74,7 @@ img {
 
 #inner-header {
 	margin: 1em;
-	
+
 	.logo {
 		img {
 			width: 100%;
@@ -1075,6 +1075,9 @@ HEADER STYLES
 
 .header {
 	background-color: $white;
+	position: relative;
+	width: 100%;
+	z-index: 99;
 }
 
 	#logo {
