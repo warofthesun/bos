@@ -38,8 +38,8 @@
 									</div>
 								</div>
 								<div class="testimonials">
-									<div class="container flex">
-										<div class="col-xs-2">
+									<div class="container flex flex--row flex--row__mobile-collapse">
+										<div class="col-xs-0 col-md-2">
 											<?php
 												$attachment_id = get_field('headshot');
 												$size = "full"; // (thumbnail, medium, large, full or custom size)

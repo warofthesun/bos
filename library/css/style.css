@@ -1798,7 +1798,7 @@ img {
   margin: 1em; }
   #inner-header .logo img {
     width: 100%;
-    max-width: 200px; }
+    max-width: 100px; }
 
 #inner-footer {
   -webkit-box-align: center;
@@ -2164,6 +2164,16 @@ img {
       font-weight: bold; }
       .founders #menu li.active:before {
         font-weight: 700; }
+
+@media only screen and (max-width: 64em) {
+  .founders #contact .contact-form {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+    .founders #contact .contact-form h2 {
+      font-size: 1.5em; }
+    .founders #contact .contact-form .form {
+      padding: 1em; } }
 
 .founders #contact .pp-tableCell {
   -ms-flex-wrap: wrap;
@@ -2677,8 +2687,8 @@ and more scalable.
 */
 #mobile-nav {
   text-align: center;
-  margin-bottom: 1em;
-  margin-top: 2em;
+  margin-bottom: 0em;
+  margin-top: 1em;
   -webkit-transition: all .5s;
   transition: all .5s;
   position: relative;
