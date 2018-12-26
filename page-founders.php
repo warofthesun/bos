@@ -1,8 +1,10 @@
 <!--page-founders-->
 <?php get_header(); ?>
 <style>
-.footer {
-	display: none;
+@media only screen and (min-width: 64em) {
+	.footer {
+		display: none;
+	}
 }
 </style>
 			<div id="content" class="founders">

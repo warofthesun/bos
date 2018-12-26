@@ -1,3 +1,4 @@
+
 /*********************
 GENERAL STYLES
 *********************/
@@ -103,10 +104,6 @@ img {
 .landing-page, .founders {
 	#inner-content {
 		height: calc(100vh - 75px);
-
-		@media only screen and (max-width: 64em) {
-			margin-bottom: 150px;
-		}
 	}
 }
 
@@ -203,7 +200,7 @@ img {
 		justify-content: center;
 
 		@media only screen and (min-width: 64em) {
-		
+
 		}
 
 		.container {
@@ -245,6 +242,13 @@ img {
 }
 
 .founders {
+
+	#inner-content {
+		
+		@media only screen and (max-width: 64em) {
+	  	height: calc(90vh - 75px);
+		}
+	}
 
 	.h1, h1 {
 		font-size: 1em;
@@ -370,7 +374,12 @@ img {
 
 	.slide {
 	  z-index: 0;
-	  @include parallax-measures;
+		width: 100%;
+		height: calc(90vh - 75px);
+
+		@media only screen and (min-width: 64em) {
+	  	@include parallax-measures;
+		}
 	  padding: 0;
 	  margin: 0;
 

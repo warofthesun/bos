@@ -1715,7 +1715,6 @@ select {
 
 #carousel {
   position: absolute;
-  top: 60vh;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1727,6 +1726,12 @@ select {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  @media only screen and (max-width: 64em) {
+    #carousel {
+      bottom: -350px; } }
+  @media only screen and (min-width: 64em) {
+    #carousel {
+      top: 60vh; } }
 
 #slides {
   overflow: hidden;
@@ -1741,6 +1746,11 @@ select {
 
 #slides li {
   position: relative; }
+  @media only screen and (max-width: 64em) {
+    #slides li {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; } }
 
 /* Styling for prev and next buttons
 .btn-bar{
@@ -1888,9 +1898,6 @@ img {
 
 .landing-page #inner-content, .founders #inner-content {
   height: calc(100vh - 75px); }
-  @media only screen and (max-width: 64em) {
-    .landing-page #inner-content, .founders #inner-content {
-      margin-bottom: 150px; } }
 
 .landing-page .founders {
   display: -webkit-box;
@@ -2016,6 +2023,10 @@ img {
         .landing-page .testimonials .container .testimonial .user .name {
           font-weight: bold; }
 
+@media only screen and (max-width: 64em) {
+  .founders #inner-content {
+    height: calc(90vh - 75px); } }
+
 .founders .h1, .founders h1 {
   font-size: 1em;
   font-weight: bold;
@@ -2117,9 +2128,13 @@ img {
 .founders .slide {
   z-index: 0;
   width: 100%;
-  height: calc(100vh - 75px);
+  height: calc(90vh - 75px);
   padding: 0;
   margin: 0; }
+  @media only screen and (min-width: 64em) {
+    .founders .slide {
+      width: 100%;
+      height: calc(100vh - 75px); } }
   .founders .slide .icon {
     display: -webkit-box;
     display: -ms-flexbox;

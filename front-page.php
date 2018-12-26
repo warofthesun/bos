@@ -36,7 +36,7 @@
 											</article>
 										</div>
 									</div>
-								</div>
+
 								<?php endwhile; endif; ?>
 								<div id="carousel">
 									<div id="carousel--buttons">
@@ -55,7 +55,7 @@
 												// height = $image[2];
 											?>
 											<li class="container flex flex--row flex--row__mobile-collapse slide">
-												<div class="col-xs-0 col-md-2">
+												<div class="col-xs-6 col-md-2">
 
 													<div class="avatar" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 												</div>
@@ -70,7 +70,7 @@
 										</ul>
 									</div>
 								</div>
-
+							</div>
 						</main>
 
 				</div>
