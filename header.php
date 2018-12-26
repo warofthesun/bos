@@ -41,7 +41,7 @@
     </script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/library/css/jquery.pagepiling.css" />
-		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.pagepiling.min.js"></script>
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.pagepiling.js"></script>
 
 
 		<?php // drop Google Analytics Here ?>
