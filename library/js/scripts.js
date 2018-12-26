@@ -129,28 +129,8 @@ jQuery(document).ready(function($) {
 			});
 
 	$(function() {
-		  $('.slide-nav ul li:first-child').addClass('selected');
+		  $('.slide-nav ul li:first-child').addClass('active');
 		});
 
-	$(".slide-nav ul li a").click(function() {
-		$(this).parent().addClass('selected').siblings().removeClass('selected');
-	});
-
-	$('#pagepiling').pagepiling({
-		menu: '#menu',
-		anchors: ['page1', 'page2', 'page3', 'page4'],
-		sectionsColor: ['white', '#ee005a', '#2C3E50', '#39C'],
-		navigation: false,
-		afterRender: function(){
-			$('#pp-nav').addClass('custom');
-		},
-		afterLoad: function(anchorLink, index){
-			if(index>1){
-				$('#pp-nav').removeClass('custom');
-			}else{
-				$('#pp-nav').addClass('custom');
-			}
-		}
-});
 
 }); /* end of as page load scripts */

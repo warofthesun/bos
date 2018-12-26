@@ -1976,21 +1976,9 @@ img {
   font-weight: bold;
   margin: 1em 0; }
 
-.founders #slide_container {
-  -webkit-perspective: 1px;
-          perspective: 1px;
-  width: 100%;
-  height: calc(100vh - 75px);
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+.founders #pagepiling {
   margin: 0; }
-  @media only screen and (min-width: 64em) {
-    .founders #slide_container {
-      overflow-x: hidden;
-      overflow-y: hidden; } }
-  .founders #slide_container li .right {
+  .founders #pagepiling li .right {
     background-color: #437bd9;
     color: #fdfdfd;
     padding: 2em;
@@ -2002,15 +1990,15 @@ img {
             align-items: center;
     position: relative; }
     @media only screen and (min-width: 64em) {
-      .founders #slide_container li .right {
+      .founders #pagepiling li .right {
         padding: 4em; } }
-    .founders #slide_container li .right h1, .founders #slide_container li .right .h1 {
+    .founders #pagepiling li .right h1, .founders #pagepiling li .right .h1 {
       color: #1c1e1e; }
-  .founders #slide_container li:nth-child(odd) .right {
+  .founders #pagepiling li:nth-child(odd) .right {
     background-color: #1c1e1e; }
-    .founders #slide_container li:nth-child(odd) .right h1, .founders #slide_container li:nth-child(odd) .right .h1 {
+    .founders #pagepiling li:nth-child(odd) .right h1, .founders #pagepiling li:nth-child(odd) .right .h1 {
       color: #437bd9; }
-  .founders #slide_container .arrow-top-left {
+  .founders #pagepiling .arrow-top-left {
     width: 0;
     height: 0;
     border-top: 0px solid transparent;
@@ -2019,7 +2007,7 @@ img {
     position: absolute;
     top: 0;
     left: 0; }
-  .founders #slide_container .arrow-bottom-left {
+  .founders #pagepiling .arrow-bottom-left {
     width: 0;
     height: 0;
     border-top: 130px solid transparent;
@@ -2028,7 +2016,7 @@ img {
     position: absolute;
     bottom: 0;
     left: 0; }
-  .founders #slide_container .arrow-bottom-right {
+  .founders #pagepiling .arrow-bottom-right {
     width: 0;
     height: 0;
     border-top: calc((100vh - 75px)/2) solid transparent;
@@ -2037,14 +2025,14 @@ img {
     position: absolute;
     bottom: 0;
     right: 0; }
-  .founders #slide_container .founders-background {
+  .founders #pagepiling .founders-background {
     background-size: cover;
     background-position: 50%;
     -webkit-filter: url("#colors");
             filter: url("#colors");
     margin: 0;
     padding: 0; }
-  .founders #slide_container .overlay {
+  .founders #pagepiling .overlay {
     background-color: rgba(28, 30, 30, 0.6);
     width: 100%;
     height: 100%;
@@ -2077,14 +2065,6 @@ img {
   z-index: 0;
   width: 100%;
   height: calc(100vh - 75px);
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   padding: 0;
   margin: 0; }
   .founders .slide .icon {
@@ -2135,7 +2115,6 @@ img {
     background-image: url("../images/lines_bottom-left-dark.png"); }
 
 .founders .slide-nav {
-  margin-top: 5px;
   position: absolute;
   height: 100%;
   left: 10%;
@@ -2152,27 +2131,23 @@ img {
   .founders .slide-nav a {
     color: #fdfdfd;
     text-decoration: none !important;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    margin-left: -1.5em;
-    margin-bottom: -.5em; }
+    display: inline-block; }
     .founders .slide-nav a:hover, .founders .slide-nav a:active, .founders .slide-nav a:focus {
       color: #fdfdfd; }
 
-.founders #nav-items {
+.founders #menu {
   list-style: none; }
-  .founders #nav-items li {
+  .founders #menu li {
     color: #fdfdfd;
     text-transform: uppercase;
     margin: .5em 0; }
-    .founders #nav-items li:hover {
+    .founders #menu li:hover {
       text-decoration: none; }
-      .founders #nav-items li:hover:before {
+      .founders #menu li:hover:before {
         font-weight: 700; }
-    .founders #nav-items li a:hover {
+    .founders #menu li a:hover {
       text-decoration: none; }
-    .founders #nav-items li:before {
+    .founders #menu li:before {
       content: "\f111";
       font-family: "Font Awesome 5 Free";
       display: inline-block;
@@ -2185,10 +2160,14 @@ img {
       margin-right: .5em;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
-    .founders #nav-items li.selected {
+    .founders #menu li.active {
       font-weight: bold; }
-      .founders #nav-items li.selected:before {
+      .founders #menu li.active:before {
         font-weight: 700; }
+
+.founders #contact .pp-tableCell {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
 
 .developers #slide_container {
   -webkit-perspective: 1px;
@@ -2221,14 +2200,6 @@ img {
   z-index: 0;
   width: 100%;
   height: 60vh;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-transition: -webkit-transform 1s ease-in-out;
-  transition: -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, -webkit-transform 1s ease-in-out;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
   padding: 0;
   margin: 0;
   color: #fdfdfd;
@@ -2366,7 +2337,7 @@ img {
     text-transform: uppercase;
     margin: .5em 0;
     display: inline-block; }
-    .developers #nav-items li.selected a {
+    .developers #nav-items li.active a {
       background-color: #fdfdfd;
       border-radius: 20px;
       border: 0; }

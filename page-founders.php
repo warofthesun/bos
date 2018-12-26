@@ -1,58 +1,37 @@
 <!--page-founders-->
 <?php get_header(); ?>
-
+<style>
+.footer {
+	display: none;
+}
+</style>
 			<div id="content" class="founders">
 
 				<div id="inner-content" class="wrap wrap--wider row">
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-								<?php if( have_rows('content_slides') ): ?>
-								<style>
 
-									<?php while( have_rows('content_slides') ): the_row();
-										$slide_number = get_sub_field('slide_number');
-										$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
-									?>
-										a[id="<?php echo $slide_name; ?>"]:target ~ #slide_container li.slide {
-											-webkit-transform: translateY(-<?php echo $slide_number; ?>00%);
-											transform: translateY(-<?php echo $slide_number; ?>00%);
-										}
-									<?php endwhile; endif; ?>
-
-									<?php if( have_posts() ): the_post();?>
-										a[id="contact"]:target ~ #slide_container li.slide {
-											-webkit-transform: translateY(-<?php the_field('slide_number'); ?>00%);
-											transform: translateY(-<?php the_field('slide_number'); ?>00%);
-										}
-									<?php endif; ?>
-
-								</style>
-								<?php if( have_rows('content_slides') ): ?>
-								<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
-									<a id="<?php echo $slide_name; ?>" style="display:none;"></a>
-								<?php endwhile; endif;?>
-									<a id="contact" style="display:none;"></a>
-
-							<?php if( have_rows('content_slides') ): ?>
 								<div class="slide-nav">
-									<ul id="nav-items">
-										<?php while( have_rows('content_slides') ): the_row(); $slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); $nav_item =  get_sub_field('slide_name'); ?>
-											<li><a href="#<?php echo $slide_name; ?>"></a></li>
-										<?php endwhile;?>
-											<li><a href="#contact"></a></li>
+									<ul id="menu">
+										<?php if( have_rows('content_slides') ) : while( have_rows('content_slides') ): the_row();
+											$slide_target = sanitize_title_for_query( get_sub_field('slide_name') );
+											$slide_name = get_sub_field('slide_name');
+										?>
+										<li data-menuanchor="<?php echo $slide_target; ?>"><a href="#<?php echo $slide_target; ?>"><?php echo $slide_name; ?></a></li>
+									<?php endwhile; endif; ?>
+									<li data-menuanchor="contact"><a href="#contact">contact</a></li>
 									</ul>
 								</div>
-						  <ul id="slide_container">
-
-								<?php while( have_rows('content_slides') ): the_row();
-									$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
+						  <ul id="pagepiling">
+								<?php if( have_rows('content_slides') ) : while( have_rows('content_slides') ): the_row();
+									$slide_target = sanitize_title_for_query( get_sub_field('slide_name') );
 									$headline = get_sub_field('headline');
 									$subhead = get_sub_field('sub-head');
 									$content = get_sub_field('slide_content');
 									$slide_image = get_sub_field('slide_image');
 									$icon = get_sub_field('slide_icon');
 								?>
-						      <li class="slide col-sm-12 row" id="slide_<?php echo $slide_name; ?>">
+						      <li class="section slide col-sm-12 row" id="<?php echo $slide_target; ?>">
 										<?php
 											$size = "full"; // (thumbnail, medium, large, full or custom size)
 											$image = wp_get_attachment_image_src( $slide_image, $size );
@@ -87,7 +66,7 @@
 
 							<?php endwhile; endif; ?>
 
-							<li class="slide col-sm-12 row contact" id="contact">
+							<li class="section slide col-sm-12 row contact" id="contact">
 								<?php
 									$slide_image = get_field('image');
 									$size = "full"; // (thumbnail, medium, large, full or custom size)
@@ -119,7 +98,16 @@
 							</li>
 
 						  </ul>
-
+							<script>
+								$('#pagepiling').pagepiling({
+									menu: '#menu',
+									anchors: ['market-fit', 'first-viable-product', 'your-technical-team', 'reduce-upfront-costs', 'go-to-market', 'contact'],
+									navigation: false,
+									afterRender: function(){
+										$('#pp-nav').addClass('custom');
+									},
+								});
+							</script>
 						</main>
 
 				</div>
