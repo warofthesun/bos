@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
 		// START Slider
 			//rotation speed and timer
     var speed = 6000;
-
+		var width=$(window).width();
     var run = setInterval(rotate, speed);
     var slides = $('.slide');
     var container = $('#slides ul');
@@ -149,6 +149,13 @@ jQuery(document).ready(function($) {
     container.find(elm + ':first').before(container.find(elm + ':last'));
     resetSlides();
 
+		$(window).on('resize', function(){
+        	clearInterval(interval);
+        	width=$(window).width();
+            $slideContainer.css('marginLeft', '0');
+            startSlider();
+        });
+
 
     //if user clicked on prev button
 
@@ -161,7 +168,7 @@ jQuery(document).ready(function($) {
         if (e.target.id == previous) {
             container.stop().animate({
                 'left': 0
-            }, 1000, function () {
+            }, 500, function () {
                 container.find(elm + ':first').before(container.find(elm + ':last'));
                 resetSlides();
             });
@@ -170,7 +177,7 @@ jQuery(document).ready(function($) {
         if (e.target.id == next) {
             container.stop().animate({
                 'left': item_width * -2
-            }, 1000, function () {
+            }, 500, function () {
                 container.find(elm + ':last').after(container.find(elm + ':first'));
                 resetSlides();
             });

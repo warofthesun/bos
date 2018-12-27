@@ -3,19 +3,20 @@
   #carousel {
     position: relative;
     top: 0;
+    background-color: $primary;
 
     #slides {
       max-width: 1580px;
+
+      ul {
+        background-color: $primary;
+    	  @include parallax-measures-short;
+    	  margin: 0;
+    		display: flex;
+    		flex-direction: row;
+      }
     }
   }
-
-	#slide_container {
-		background-color: $primary;
-	  @include parallax-measures-short;
-	  margin: 0;
-		display: flex;
-		flex-direction: row;
-	}
 
 	.slide {
 	  @include parallax-measures-short;
@@ -23,7 +24,7 @@
 	  padding: 0;
 	  margin: 0;
 		color: $white;
-		font-size: 1.4em;
+		font-size: 1.1em;
 
 		.slide_background {
 			 background-position: center;

@@ -2173,22 +2173,22 @@ img {
 
 .developers #carousel {
   position: relative;
-  top: 0; }
+  top: 0;
+  background-color: #437bd9; }
   .developers #carousel #slides {
     max-width: 1580px; }
-
-.developers #slide_container {
-  background-color: #437bd9;
-  width: 100%;
-  height: 60vh;
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
+    .developers #carousel #slides ul {
+      background-color: #437bd9;
+      width: 100%;
+      height: 60vh;
+      margin: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; }
 
 .developers .slide {
   width: 100%;
@@ -2196,7 +2196,7 @@ img {
   padding: 0;
   margin: 0;
   color: #fdfdfd;
-  font-size: 1.4em; }
+  font-size: 1.1em; }
   .developers .slide .slide_background {
     background-position: center;
     -webkit-filter: url("#colors");
