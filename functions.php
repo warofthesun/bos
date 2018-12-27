@@ -338,6 +338,6 @@ function my_acf_settings_dir( $dir ) {
 // 4. Include ACF
 include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
-include 'inc/acf_fields.php';
+//include 'inc/acf_fields.php';
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
