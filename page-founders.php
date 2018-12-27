@@ -40,7 +40,7 @@
 											// height = $image[2];
 										?>
 						          <div class="col-xs-0 col-md-6 left section-one__background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-											<div class="col-xs-0 col-md-6 overlay overlay__dark">
+											<div class="col-xs-0 col-md-6 overlay overlay__dark mobile-hide">
 												<div class="arrow-bottom-left"></div>
 												<div class="arrow-bottom-right"></div>
 											</div>
@@ -79,19 +79,34 @@
 									<div class="arrow-bottom-left"></div>
 									<div class="wrap elements row">
 										<div class="col-xs-6 left-lines"></div>
-										<div class="col-xs-6 right-lines"></div>
+
 									</div>
 									<div class="arrow-bottom-right"></div>
 								</div>
-								<div class="col-xs-12 collapse bottom-row section-one__background" style="background-image:url('<?php echo $image[0]; ?>');">
+								<div class="col-xs-12 collapse bottom-row contact-image section-one__background" style="background-image:url('<?php echo $image[0]; ?>');">
 									<div class="overlay overlay__dark"></div>
 								</div>
 								<div class="col-xs-12 contact-form">
-									<div class="col-xs-12 col-md-4">
+									<div class="col-xs-12 col-md-8">
 										<h2><?php the_field('headline'); ?></h2>
 										<div class="form">
 											<h3><?php the_field('form_headline'); ?></h3>
-											<?php the_field('form'); ?>
+											<div class="col-xs-12 collapse flex flex--row flex--row__mobile-collapse">
+												<div class="col-xs-12 col-md-6">
+													<?php the_field('form'); ?>
+												</div>
+												<div class="col-xs-12 col-md-6 bullets">
+													<?php if( have_rows('form_bullets') ): ?>
+														<ul>
+															<?php while( have_rows('form_bullets') ): the_row(); ?>
+															<li>
+																<i>+</i> <?php the_sub_field('bullet'); ?>
+															</li>
+														<?php endwhile; endif; ?>
+														</ul>
+												</div>
+											</div>
+											<div class="col-xs-12 right-lines"></div>
 										</div>
 									</div>
 								</div>

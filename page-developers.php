@@ -101,7 +101,7 @@
 							</div>
 						</article>
 
-						<article class="col-sm-12 row contact" id="contact">
+						<article class="col-sm-12 section row contact" id="contact">
 							<?php
 								$slide_image = get_field('image');
 								$size = "full"; // (thumbnail, medium, large, full or custom size)
@@ -118,8 +118,8 @@
 								</div>
 								<div class="arrow-bottom-right"></div>
 							</div>
-							<div class="col-xs-12 collapse bottom-row contact-image" style="background-image:url('<?php echo $image[0]; ?>');">
-								<div class="overlay"></div>
+							<div class="col-xs-12 collapse bottom-row contact-image section-one__background" style="background-image:url('<?php echo $image[0]; ?>');">
+								<div class="overlay overlay__dark"></div>
 							</div>
 							<div class="col-xs-12 contact-form">
 								<div class="col-xs-12 col-md-8">

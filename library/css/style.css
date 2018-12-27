@@ -1791,6 +1791,10 @@ the other stylesheets. Remember, keep it light: Speed is Important.
 /*********************
 GENERAL STYLES
 *********************/
+@media only screen and (max-width: 64em) {
+  .mobile-hide {
+    display: none !important; } }
+
 .collapse {
   margin: 0;
   padding: 0; }
@@ -2105,7 +2109,7 @@ img {
 .founders .slide-nav {
   position: absolute;
   height: 100%;
-  left: 10%;
+  left: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2451,71 +2455,6 @@ img {
   margin: 0;
   padding: 0; }
 
-.developers .contact-image {
-  position: relative; }
-  .developers .contact-image .overlay {
-    background-color: rgba(28, 30, 30, 0.6);
-    width: 100%;
-    height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: absolute; }
-
-@media only screen and (max-width: 64em) {
-  .developers #contact .contact-form {
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start; }
-    .developers #contact .contact-form .form {
-      padding: 1em; } }
-
-.developers .contact-form h2 {
-  padding: 0 2em 1em 2em; }
-
-@media only screen and (max-width: 64em) {
-  .developers .contact-form h2 {
-    font-size: 1.2em; } }
-
-.developers .contact-form .bullets {
-  position: relative; }
-  @media only screen and (max-width: 64em) {
-    .developers .contact-form .bullets {
-      padding: 1em 2em; } }
-  .developers .contact-form .bullets li {
-    margin-bottom: 1em; }
-    .developers .contact-form .bullets li i {
-      font-style: normal;
-      margin-left: -1em;
-      margin-right: .5em;
-      font-weight: bold;
-      color: #437bd9; }
-
-.developers .form .right-lines {
-  background-image: url("../images/lines_bottom-right-blue_darker.png");
-  background-size: 300px;
-  background-position: right bottom;
-  background-repeat: no-repeat;
-  height: 30px;
-  margin-top: -30px; }
-
-.developers .disclaimer {
-  background-color: #d7e9f5;
-  padding: 2em;
-  text-align: center;
-  color: #1c1e1e;
-  width: 100%; }
-
 #contact .top-row {
   background-color: #437bd9;
   position: relative;
@@ -2556,10 +2495,6 @@ img {
     background-position: right bottom;
     background-repeat: no-repeat; }
 
-#contact .bottom-row {
-  background-size: cover;
-  position: relative; }
-
 #contact .contact-form {
   position: absolute;
   width: 100%;
@@ -2572,10 +2507,22 @@ img {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  z-index: 20; }
+  @media only screen and (max-width: 64em) {
+    #contact .contact-form {
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
+      #contact .contact-form .form {
+        padding: 1em; } }
   #contact .contact-form h2 {
     color: #fdfdfd;
-    text-align: center; }
+    text-align: center;
+    padding: 0 2em 1em 2em; }
+    @media only screen and (max-width: 64em) {
+      #contact .contact-form h2 h2 {
+        font-size: 1.2em; } }
   #contact .contact-form .form {
     background-color: #fdfdfd;
     padding: 3em;
@@ -2589,6 +2536,33 @@ img {
       font-size: 0.8em;
       text-align: center;
       padding: 0 1em; }
+    #contact .contact-form .form .right-lines {
+      background-image: url("../images/lines_bottom-right-blue_darker.png");
+      background-size: 300px;
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      height: 30px;
+      margin-top: -30px; }
+  #contact .contact-form .bullets {
+    position: relative; }
+    @media only screen and (max-width: 64em) {
+      #contact .contact-form .bullets {
+        padding: 1em 2em; } }
+    #contact .contact-form .bullets li {
+      margin-bottom: 1em; }
+      #contact .contact-form .bullets li i {
+        font-style: normal;
+        margin-left: -1em;
+        margin-right: .5em;
+        font-weight: bold;
+        color: #437bd9; }
+
+.disclaimer {
+  background-color: #d7e9f5;
+  padding: 2em;
+  text-align: center;
+  color: #1c1e1e;
+  width: 100%; }
 
 /*********************
 LAYOUT & GRID STYLES

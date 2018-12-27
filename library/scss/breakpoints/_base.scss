@@ -1,6 +1,12 @@
 /*********************
 GENERAL STYLES
 *********************/
+.mobile-hide {
+	@media only screen and (max-width: 64em) {
+		display: none !important;
+	}
+}
+
 .collapse {
 	margin: 0;
 	padding: 0;
@@ -100,380 +106,7 @@ img {
 
 @import "partials/founders";
 
-.developers {
-
-	#slide_container {
-		perspective: 1px;
-		background-color: $primary;
-	  @include parallax-measures-short;
-
-		@media only screen and (max-width: 64em) {
-			height: 100vh;
-		}
-
-	  top: 0px;
-	  bottom: 0px;
-	  left: 0px;
-	  right: 0px;
-	  overflow-x: hidden;
-	  overflow-y: hidden;
-	  margin: 0;
-		display: flex;
-		flex-direction: row;
-
-		li {
-			@media only screen and (max-width: 64em) {
-				&:nth-child(even) {
-					.overlay {
-						background-color: rgba($black, 0.8);
-					}
-				}
-			}
-		}
-	}
-
-	.slide {
-	  z-index: 0;
-	  @include parallax-measures-short;
-
-		@media only screen and (max-width: 64em) {
-			height: 100vh;
-		}
-
-	  padding: 0;
-	  margin: 0;
-		color: $white;
-		font-size: 1.4em;
-
-		.slide_background {
-			 background-position: center;
-			 filter: url('#colors');
-			 width: 100%;
-		}
-
-		h2 {
-			font-weight: bold;
-			font-size: 1.6em;
-		}
-
-		.overlay {
-			background-color: rgba($primary, 0.8);
-			width: 100%;
-			height: 100%;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			position: absolute;
-
-
-			.wrap {
-				 height: 70%;
-				 position: relative;
-				 display: flex;
-				 align-items: center;
-				 justify-content: center;
-			}
-
-			.arrow {
-				&-top-right {
-					width: 0;
-					height: 0;
-					border-right: 0px solid transparent;
-					border-left: calc((100vh - 75px)/2) solid transparent;
-					border-top: 300px solid rgba($white, 0.05);
-					position: absolute;
-					top: 0; right: 0;
-				}
-
-				&-bottom-left {
-					width: 0;
-					height: 0;
-					border-top: 200px solid transparent;
-					border-bottom: 0px solid transparent;
-					border-left: 210px solid rgba($white, 0.25);
-					position: absolute;
-					bottom: 0;
-					left: 0;
-				}
-			}
-		}
-
-	  .design-element {
-	    &__top {
-	      display: flex;
-	      flex-direction: column;
-	      align-items: flex-end;
-				height: 30px;
-				background-image: url('../images/lines_top-right-blue.png');
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: right;
-				position: absolute;
-				top: 0;
-				right: 0;
-				width: 100%;
-	    }
-
-			&__bottom {
-					display: flex;
-					flex-direction: column;
-					justify-content: flex-end;
-					height: 30px;
-					background-image: url('../images/lines_bottom-left-blue.png');
-					background-size: contain;
-					background-repeat: no-repeat;
-					background-position: left bottom;
-					position: absolute;
-					bottom: 0;
-					left: 0;
-					width:100%;
-			}
-	  }
-	}
-	.slide-nav {
-		position: absolute;
-		width: 100%;
-		bottom: 10%;
-		display: flex;
-		justify-content: center;
-		z-index: 10;
-
-		@media only screen and (max-width: 64em) {
-			display: none;
-		}
-
-		a {
-			color: $white;
-			text-decoration: none !important;
-			@include transition(all 0.2s ease-in-out)
-
-			&:hover {
-				color: $white;
-			}
-		}
-	}
-
-	#nav-items {
-		list-style: none;
-		flex-direction: row;
-		li {
-			color: $white;
-			text-transform: uppercase;
-			margin: .5em 0;
-			display: inline-block;
-
-			&.active {
-				a {
-					background-color: $white;
-					border-radius: 20px;
-					border:0;
-				}
-			}
-
-			a {
-				width: 20px;
-				height: 20px;
-				border-radius: 20px;
-				border:2px solid $white;
-				display: inline-block;
-				margin-right: .5em;
-			}
-
-			a:hover {
-				background-color: $white;
-				border-radius: 20px;
-				border:0;
-			}
-		}
-	}
-
-	.dark {
-		background-color: $black;
-		padding: 2em 0;
-
-		@media only screen and (min-width: 64em) {
-			padding: 6em 0;
-		}
-
-		width: 100%;
-		display: flex;
-
-		h2 {
-			color: $white;
-			text-align: center;
-		}
-
-		img {
-			&.cloud {
-				width: 100%;
-				height: auto;
-			}
-		}
-	}
-
-	.feature {
-		margin-bottom: 2em;
-
-		img {
-			width: 100%;
-			height: auto;
-			max-width: 80px;
-		}
-
-		p {
-			padding: 0 1em;
-		}
-	}
-
-	.light {
-		background-color: $primary-lt;
-		padding: 2em 0;
-
-		@media only screen and (min-width: 64em) {
-			padding: 4em;
-		}
-
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		text-align: center;
-	}
-
-	.product_development {
-		padding: 2em;
-
-		@media only screen and (min-width: 64em) {
-			padding: 4em;
-		}
-
-		display: flex;
-		flex-direction: column;
-
-		h2 {
-			text-align: center;
-		}
-
-		h3 {
-			color: $primary;
-		}
-
-		em {
-			font-size: 0.9em;
-			color: $primary;
-		}
-	}
-
-	.line-item {
-		width: calc(100%/4);
-
-		@media only screen and (min-width: 64em) {
-			width: calc(100%/7);
-		}
-
-		height: 40px;
-		justify-content: center;
-		display: flex;
-		align-items: center;
-		margin-top: 1em;
-
-		img {
-			width: 80%;
-			height: auto;
-		}
-	}
-
-	.partner-logos {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
-
-	.contact {
-		position: relative;
-		height: 90vh;
-		width: 100%;
-		margin: 0;
-		padding: 0;
-	}
-
-	.contact-image {
-		position: relative;
-		.overlay {
-			background-color: rgba($black, 0.6);
-			width: 100%;
-			height: 100%;
-			display: flex;
-			flex-direction: row;
-			justify-content: center;
-			align-items: center;
-			position: absolute;
-		}
-	}
-
-	#contact {
-		.contact-form {
-			@media only screen and (max-width: 64em) {
-				align-items: flex-start;
-
-				.form {
-					padding: 1em;
-				}
-			}
-		}
-	}
-
-	.contact-form {
-		h2 {
-			 padding: 0 2em 1em 2em;
-		}
-
-		@media only screen and (max-width: 64em) {
-			h2 {
-				font-size: 1.2em;
-			}
-		}
-
-		.bullets {
-			position: relative;
-
-			@media only screen and (max-width: 64em) {
-				padding: 1em 2em;
-			}
-
-			li {
-				 margin-bottom:1em;
-
-				 i {
-					 font-style:normal;
-					 margin-left: -1em;
-					 margin-right: .5em;
-					 font-weight:bold;
-					 color: $primary;
-				 }
-			}
-		}
-	}
-
-	.form {
-		.right-lines {
-			background-image: url('../images/lines_bottom-right-blue_darker.png');
-			background-size: 300px;
-			background-position: right bottom;
-			background-repeat:no-repeat;
-			height: 30px;
-			margin-top: -30px;
-		}
-	}
-
-	.disclaimer {
-		background-color: $primary-lt;
-		padding: 2em;
-		text-align: center;
-		color: $black;
-		width: 100%;
-	}
-}
+@import "partials/developers";
 
 #contact {
 	.top-row {
@@ -525,10 +158,6 @@ img {
 		}
 	}
 
-	.bottom-row {
-		background-size: cover;
-		position: relative;
-	}
 
 	.contact-form {
 		position: absolute;
@@ -537,10 +166,26 @@ img {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		z-index: 20;
+
+		@media only screen and (max-width: 64em) {
+			align-items: flex-start;
+
+			.form {
+				padding: 1em;
+			}
+		}
 
 		h2 {
 			color: $white;
 			text-align: center;
+			padding: 0 2em 1em 2em;
+
+			@media only screen and (max-width: 64em) {
+				h2 {
+					font-size: 1.2em;
+				}
+			}
 		}
 
 		.form {
@@ -559,8 +204,48 @@ img {
 				text-align: center;
 				padding: 0 1em;
 			}
+
+			.right-lines {
+				background-image: url('../images/lines_bottom-right-blue_darker.png');
+				background-size: 300px;
+				background-position: right bottom;
+				background-repeat:no-repeat;
+				height: 30px;
+				margin-top: -30px;
+			}
+
+
+
+		}
+
+		.bullets {
+			position: relative;
+
+			@media only screen and (max-width: 64em) {
+				padding: 1em 2em;
+			}
+
+			li {
+				 margin-bottom:1em;
+
+				 i {
+					 font-style:normal;
+					 margin-left: -1em;
+					 margin-right: .5em;
+					 font-weight:bold;
+					 color: $primary;
+				 }
+			}
 		}
 	}
+}
+
+.disclaimer {
+	background-color: $primary-lt;
+	padding: 2em;
+	text-align: center;
+	color: $black;
+	width: 100%;
 }
 /*********************
 LAYOUT & GRID STYLES
