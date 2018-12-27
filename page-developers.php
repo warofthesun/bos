@@ -6,29 +6,19 @@
 				<div id="inner-content" class="wrap wrap--wider row">
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-							<style>
-								<?php if( have_rows('hero_slides') ): ?>
-								<?php while( have_rows('hero_slides') ): the_row();
-									$slide_number = get_sub_field('slide_number');
-									$slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
-
-										a[id="<?php echo $slide_name; ?>"]:target ~ #slide_container li.slide {
-											-webkit-transform: translateX(-<?php echo $slide_number; ?>00%);
-											transform: translateX(-<?php echo $slide_number; ?>00%);
-										}
-								<?php endwhile; ?>
-							</style>
+							<div id="carousel">
+								<div id="carousel--buttons">
+									<a id="prev" href="#"></a>
+									<a id="next" href="#"></a>
+								</div>
+								<div id="slides">
 								<div class="hero_slider">
-									<?php while( have_rows('hero_slides') ): the_row();
-										$slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
-										<a id="<?php echo $slide_name; ?>" style="display:none;"></a>
-									<?php endwhile; ?>
-									<ul id="slide_container" class="flex--row__mobile-collapse">
-										<?php while( have_rows('hero_slides') ): the_row();
+									<ul id="slide_container" class="flex--row__mobile-collapse slide">
+										<?php if( have_rows('hero_slides') ): while( have_rows('hero_slides') ): the_row();
 											$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
 											$slide_image = get_sub_field('image');
 											?>
-										<li class="slide col-sm-12 row" id="slide_<?php echo $slide_name; ?>" >
+										<li class="slide col-sm-12 row">
 											<?php
 												$size = "full"; // (thumbnail, medium, large, full or custom size)
 												$image = wp_get_attachment_image_src( $slide_image, $size );
@@ -50,17 +40,12 @@
 												<div class="arrow-top-right"></div>
 											</div>
 										</li>
-									<?php endwhile; ?>
+									<?php endwhile; endif; ?>
 									</ul>
-									<div class="slide-nav">
-										<ul id="nav-items">
-											<?php while( have_rows('hero_slides') ): the_row();
-												$slide_name = sanitize_title_for_query( get_sub_field('slide_name') ); ?>
-												<li><a href="#<?php echo $slide_name; ?>"></a></li>
-											<?php endwhile; endif; ?>
-										</ul>
-									</div>
+
 								</div>
+								</div>
+							</div>
 						</main>
 						<article class="dark">
 							<div class="wrap row" style="color:white;">
