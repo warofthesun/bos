@@ -301,28 +301,6 @@ function starter_fonts() {
 add_action('wp_enqueue_scripts', 'starter_fonts');
 
 
-/* Load ScrollMagic Scripts */
-
-function scrollmagic_scripts() {
-
-		wp_register_script( 'greensock', get_stylesheet_directory_uri() . '/library/js/libs/greensock/TweenMax.min.js', array(), '', true );
-
-    wp_register_script( 'scrollmagic', get_stylesheet_directory_uri() . '/library/scrollmagic/uncompressed/ScrollMagic.js', array(), '', true );
-
-    wp_register_script( 'animation', get_stylesheet_directory_uri() . '/library/scrollmagic/uncompressed/plugins/animation.gsap.js', array(), '', true );
-
-    wp_register_script( 'indicators', get_stylesheet_directory_uri() . '/library/scrollmagic/uncompressed/plugins/debug.addIndicators.js', array(), '', true );
-
-
-
-		// enqueue styles and scripts
-		wp_enqueue_script( 'greensock' );
-		wp_enqueue_script( 'scrollmagic' );
-		wp_enqueue_script( 'animation' );
-    wp_enqueue_script( 'indicators' );
-}
-
-add_action( 'wp_enqueue_scripts', 'scrollmagic_scripts' );
 
 
 // 1. customize ACF path
@@ -360,5 +338,6 @@ function my_acf_settings_dir( $dir ) {
 // 4. Include ACF
 include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
+include 'inc/acf_fields.php';
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

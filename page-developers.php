@@ -6,44 +6,7 @@
 				<div id="inner-content" class="wrap wrap--wider row">
 
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-							
-							<div id="carousel">
-								<div id="carousel--buttons">
-									<a id="prev" href="#"></a>
-									<a id="next" href="#"></a>
-								</div>
-								<div id="slides" class="hero_slider">
-
-									<ul class="slide">
-										<?php if( have_rows('hero_slides') ): while( have_rows('hero_slides') ): the_row();
-											$slide_name = sanitize_title_for_query( get_sub_field('slide_name') );
-											$slide_image = get_sub_field('image');
-											?>
-										<li class="slide col-sm-12 row">
-											<?php
-												$size = "full"; // (thumbnail, medium, large, full or custom size)
-												$image = wp_get_attachment_image_src( $slide_image, $size );
-												// url = $image[0];
-												// width = $image[1];
-												// height = $image[2];
-											?>
-											<div class="slide_background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
-											<div class="overlay">
-												<div class="wrap">
-													<div class="design-element__top"></div>
-													<div class="content col-xs-12 col-md-8" style="text-align:center;">
-														<h2><?php the_sub_field('headline'); ?></h2>
-														<?php the_sub_field('content'); ?>
-													</div>
-													<div class="design-element__bottom"></div>
-												</div>
-											</div>
-										</li>
-									<?php endwhile; endif; ?>
-									</ul>
-
-								</div>
-							</div>
+							<?php the_field('hero_slides'); ?>
 						</main>
 						<article class="dark">
 							<div class="wrap row" style="color:white;">
