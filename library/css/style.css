@@ -1989,9 +1989,6 @@ img {
 
 .founders #inner-content {
   height: calc(100vh - 75px); }
-  @media only screen and (max-width: 64em) {
-    .founders #inner-content {
-      height: calc(90vh - 75px); } }
 
 .founders .h1, .founders h1 {
   font-size: 1em;
@@ -2063,7 +2060,7 @@ img {
 .founders .slide {
   z-index: 0;
   width: 100%;
-  height: calc(90vh - 75px);
+  height: calc(100vh - 75px);
   padding: 0;
   margin: 0; }
   @media only screen and (min-width: 64em) {
@@ -2167,6 +2164,10 @@ img {
       font-weight: bold; }
       .founders #menu li.active:before {
         font-weight: 700; }
+
+@media only screen and (max-width: 64em) {
+  .founders #contact {
+    height: calc(100vh + 75px); } }
 
 @media only screen and (max-width: 64em) {
   .founders #contact .contact-form {
@@ -2404,6 +2405,9 @@ img {
   width: 100%;
   margin: 0;
   padding: 0; }
+  @media only screen and (max-width: 64em) {
+    .developers .contact {
+      height: calc(100vh + 75px); } }
 
 #contact .top-row {
   background-color: #437bd9;
@@ -2468,16 +2472,20 @@ img {
         padding: 1em; } }
   #contact .contact-form h2 {
     color: #fdfdfd;
-    text-align: center;
-    padding: 0 2em 1em 2em; }
+    text-align: center; }
+    @media only screen and (min-width: 64em) {
+      #contact .contact-form h2 {
+        padding: 0 2em 1em 2em; } }
     @media only screen and (max-width: 64em) {
       #contact .contact-form h2 h2 {
         font-size: 1.2em; } }
   #contact .contact-form .form {
     background-color: #fdfdfd;
-    padding: 3em;
     -webkit-box-shadow: 0px 0px 9px 3px rgba(28, 30, 30, 0.4);
             box-shadow: 0px 0px 9px 3px rgba(28, 30, 30, 0.4); }
+    @media only screen and (min-width: 64em) {
+      #contact .contact-form .form {
+        padding: 3em; } }
     #contact .contact-form .form h3 {
       color: #1c1e1e;
       text-align: center;

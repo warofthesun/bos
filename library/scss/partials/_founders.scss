@@ -3,9 +3,6 @@
 	#inner-content {
     height: calc(100vh - 75px);
 
-		@media only screen and (max-width: 64em) {
-	  	height: calc(90vh - 75px);
-		}
 	}
 
 	.h1, h1 {
@@ -104,7 +101,7 @@
 	.slide {
 	  z-index: 0;
 		width: 100%;
-		height: calc(90vh - 75px);
+		height: calc(100vh - 75px);
 
 		@media only screen and (min-width: 64em) {
 	  	@include parallax-measures;
@@ -228,6 +225,9 @@
 	}
 
 	#contact {
+    @media only screen and (max-width: 64em) {
+      height: calc(100vh + 75px);
+    }
 		.contact-form {
 			@media only screen and (max-width: 64em) {
 				align-items: flex-start;
