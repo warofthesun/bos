@@ -3,6 +3,14 @@
   #inner-content {
 		height: calc(100vh - 75px);
 	}
+
+  #carousel {
+    @media only screen and (max-width: 64em) {
+      position: relative;
+      bottom: 0;
+      top: 0;
+    }
+  }
 }
 
 .section {
@@ -93,6 +101,11 @@
 		padding: 2em;
 		border-bottom: 4px solid $primary;
 		box-shadow: 0px -2px 3px rgba($black, 0.4);
+
+    @media only screen and (max-width: 64em) {
+      align-items: center;
+    }
+
 
 		@media only screen and (min-width: 64em) {
 			width: 700px;
