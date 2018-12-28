@@ -23,7 +23,7 @@
     &.owl-pagination-true {
       margin-bottom: 0px !important;
     }
-    
+
     .owl-item {
       div {
         display: flex;
@@ -45,8 +45,8 @@
       .owl-dot {
         span {
           background-color: rgba($white, 0.2) !important;
-          width: 20px !important;
-          height: 20px !important;
+          width: 15px !important;
+          height: 15px !important;
           border: 1px solid rgba($white, 0.9) !important;
         }
       }
@@ -54,8 +54,8 @@
       .owl-dot.active {
         span {
           background-color: rgba($white, 0.9) !important;
-          width: 20px !important;
-          height: 20px !important;
+          width: 15px !important;
+          height: 15px !important;
           border: 1px solid rgba($white, 0.9) !important;
         }
       }

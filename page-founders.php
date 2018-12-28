@@ -76,12 +76,11 @@
 									// height = $image[2];
 								?>
 								<div class="col-xs-12 collapse top-row">
-									<div class="arrow-bottom-left"></div>
-									<div class="wrap elements row">
+									<div class="arrow-bottom-left mobile-hide"></div>
+									<div class="wrap elements row mobile-hide">
 										<div class="col-xs-6 left-lines"></div>
-
 									</div>
-									<div class="arrow-bottom-right"></div>
+									<div class="arrow-bottom-right mobile-hide"></div>
 								</div>
 								<div class="col-xs-12 collapse bottom-row contact-image section-one__background" style="background-image:url('<?php echo $image[0]; ?>');">
 									<div class="overlay overlay__dark"></div>
@@ -106,7 +105,7 @@
 														</ul>
 												</div>
 											</div>
-											<div class="col-xs-12 right-lines"></div>
+											<div class="col-xs-12 right-lines mobile-hide"></div>
 										</div>
 									</div>
 								</div>

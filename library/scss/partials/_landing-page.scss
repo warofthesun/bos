@@ -28,13 +28,13 @@
 	}
 
   &-one {
-
 		&__background {
 			background-size: cover;
 			background-position: 50%;
 			filter: url('#colors');
 			margin: 0;
 			padding: 0;
+      position: relative;
 		}
   }
 

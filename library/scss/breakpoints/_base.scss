@@ -204,6 +204,10 @@ img {
 				color: $black;
 				text-align: center;
 				font-size: 1.3em;
+
+				@media only screen and (min-width: 64em) {
+					margin-bottom: 2em;
+				}
 			}
 
 			p {
@@ -433,6 +437,7 @@ and more scalable.
 			text-decoration: none;
 			padding: 0.75em;
 			text-transform: uppercase;
+			font-size: 0.9em;
 		}
 
 		&:first-child {}
@@ -441,19 +446,24 @@ and more scalable.
 			background-color: $primary;
 			border-radius: .3em;
 			font-weight: bold;
+			padding: 0 .5em;
+
+			&:hover {
+				background-color: $link-hover;
+				text-shadow: 1px 1px 1px rgba($black, 0.5);
+				@include transition(all 0.2s ease-in-out);
+				color: $white;
+
+				a {
+					color: $white;
+					text-decoration: none;
+				}
+			}
+
 
 			a {
 				color: $white;
 				text-decoration: none;
-
-				&:hover {
-					text-decoration: none;
-					border-radius: .3em;
-					background-color: $link-hover;
-					text-shadow: 1px 1px 1px rgba($black, 0.5);
-					@include transition(all 0.2s ease-in-out);
-					color: $white;
-				}
 			}
 		}
 
@@ -494,7 +504,9 @@ and more scalable.
 	li.current_page_item,
 	li.current_page_ancestor {
 
-		a {}
+		a {
+			font-weight: bold;
+		}
 
 	}  /* end current highlighters */
 
@@ -1166,10 +1178,11 @@ FOOTER STYLES
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	font-size: 0.9em;
 
 	.logo {
 		img {
-			max-width: 150px;
+			max-width: 100px;
 		}
 	}
 }

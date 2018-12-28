@@ -59,7 +59,7 @@
 
 													<div class="avatar" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 												</div>
-												<div class="col-xs-10 testimonial">
+												<div class="col-xs-12 col-md-10 testimonial">
 													<?php the_sub_field('testimonial'); ?>
 													<div class="user">
 														<span class="name"><?php the_sub_field('name'); ?> </span><span class="title"><?php the_sub_field('position'); ?></span>
