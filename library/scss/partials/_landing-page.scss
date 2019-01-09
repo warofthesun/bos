@@ -16,13 +16,7 @@
     }
 
     #slides {
-      li {
-        opacity: 0;
-
-        &:nth-child(2) {
-          opacity: 1;
-        }
-      }
+      opacity:0;
     }
   }
 }
