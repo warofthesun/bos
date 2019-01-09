@@ -2136,7 +2136,9 @@ img {
   .founders .slide-nav a {
     color: #fdfdfd;
     text-decoration: none !important;
-    display: inline-block; }
+    display: inline-block;
+    margin-left: -1.5em;
+    padding-left: 1.5em; }
     .founders .slide-nav a:hover, .founders .slide-nav a:active, .founders .slide-nav a:focus {
       color: #fdfdfd; }
 
