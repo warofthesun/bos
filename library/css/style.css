@@ -1890,6 +1890,11 @@ img {
     bottom: 0;
     top: 0; } }
 
+.landing-page #carousel #slides li {
+  opacity: 0; }
+  .landing-page #carousel #slides li:nth-child(2) {
+    opacity: 1; }
+
 .section {
   display: -webkit-box;
   display: -ms-flexbox;

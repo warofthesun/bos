@@ -123,6 +123,8 @@ sr.reveal('.single-post');
 */
 jQuery(document).ready(function($) {
 
+	$("#slides li").css("opacity", "1");
+
 	$("#mobile-nav").click(function(){
         $(".nav").toggleClass("show");
 				$("#mobile-nav").toggleClass("show");
