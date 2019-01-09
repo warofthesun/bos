@@ -134,7 +134,7 @@ jQuery(document).ready(function($) {
 
 		// START Slider
 			//rotation speed and timer
-    var speed = 1000;
+    var speed = 5000;
 		var width=$(window).width();
     var run = setInterval(rotate, speed);
     var slides = $('.slide');
