@@ -158,93 +158,7 @@ function starter_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 
-	/*
-	to add more sidebars or widgetized areas, just copy
-	and edit the above sidebar code. In order to call
-	your new sidebar just use the following code:
-
-	Just change the name to whatever your new
-	sidebar's id is, for example:
-
-	register_sidebar(array(
-		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'startertheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'startertheme' ),
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h4 class="widgettitle">',
-		'after_title' => '</h4>',
-	));
-
-	To call the sidebar in your template, you can just copy
-	the sidebar.php file and rename it to your sidebar's name.
-	So using the above example, it would be:
-	sidebar-sidebar2.php
-
-	*/
-} // don't remove this bracket!
-
-/*
- * Remove Original Tag Meta Box - courtesy of https://rudrastyh.com/wordpress/tag-metabox-like-categories.html
- */
-function rudr_post_tags_meta_box_remove() {
-	$id = 'tagsdiv-post_tag'; // you can find it in a page source code (Ctrl+U)
-	$post_type = 'post'; // remove only from post edit screen
-	$position = 'side';
-	remove_meta_box( $id, $post_type, $position );
-}
-add_action( 'admin_menu', 'rudr_post_tags_meta_box_remove');
-
-/*
- * Add Category style Tag box
- */
-function rudr_add_new_tags_metabox(){
-	$id = 'rudrtagsdiv-post_tag'; // it should be unique
-	$heading = 'Tags'; // meta box heading
-	$callback = 'rudr_metabox_content'; // the name of the callback function
-	$post_type = 'post';
-	$position = 'side';
-	$pri = 'default'; // priority, 'default' is good for us
-	add_meta_box( $id, $heading, $callback, $post_type, $position, $pri );
-}
-add_action( 'admin_menu', 'rudr_add_new_tags_metabox');
-
-/*
- * Fill
- */
- function rudr_metabox_content($post) {
- 		// get all blog post tags as an array of objects
- 		$all_tags = get_terms( array('taxonomy' => 'post_tag', 'hide_empty' => 0) );
- 		// get all tags assigned to a post
- 		$all_tags_of_post = get_the_terms( $post->ID, 'post_tag' );
-
- 		// create an array of post tags ids
- 		$ids = array();
- 		if ( $all_tags_of_post ) {
- 			foreach ($all_tags_of_post as $tag ) {
- 				$ids[] = $tag->term_id;
- 			}
- 		}
-
- 		// HTML
- 		echo '<div id="taxonomy-post_tag" class="categorydiv">';
- 		echo '<div id="tag-all" class="tabs-panel" style="display:block">';
- 		echo '<input type="hidden" name="tax_input[post_tag][]" value="0" />';
- 		echo '<ul>';
- 		foreach( $all_tags as $tag ){
- 			// unchecked by default
- 			$checked = "";
- 			// if an ID of a tag in the loop is in the array of assigned post tags - then check the checkbox
- 			if ( in_array( $tag->term_id, $ids ) ) {
- 				$checked = " checked='checked'";
- 			}
- 			$id = 'post_tag-' . $tag->term_id;
- 			echo "<li id='{$id}'>";
- 			echo "<label><input type='checkbox' name='tax_input[post_tag][]' id='in-$id'". $checked ." value='$tag->slug' /> $tag->name</label><br />";
- 			echo "</li>";
- 		}
- 		echo '</ul></div></div>'; // end HTML
- 	}
+} 
 
 
 /************* COMMENT LAYOUT *********************/
@@ -285,22 +199,6 @@ function starter_comments( $comment, $args, $depth ) {
   <?php // </li> is added by WordPress automatically ?>
 <?php
 } // don't remove this bracket!
-
-
-/*
-This is a modification of a function found in the
-twentythirteen theme where we can declare some
-external fonts. If you're using Google Fonts, you
-can replace these fonts, change it in your scss files
-and be up and running in seconds.
-*/
-function starter_fonts() {
-  wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lora:400,400i|Roboto:300,300i,400,400i,500,700,900');
-}
-
-add_action('wp_enqueue_scripts', 'starter_fonts');
-
-
 
 
 // 1. customize ACF path

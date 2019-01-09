@@ -1,6 +1,7 @@
 			<footer class="footer" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
 
-				<div id="inner-footer" class="wrap  row">
+				<div id="inner-footer" class="wrap row">
+					<a href="<?php echo home_url(); ?>" rel="nofollow" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/boslogo.png" /></a>
 
 					<nav role="navigation">
 						<?php wp_nav_menu(array(
@@ -17,7 +18,7 @@
     					'fallback_cb' => 'starter_footer_links_fallback'  // fallback function
 						)); ?>
 					</nav>
-					<a href="<?php echo home_url(); ?>" rel="nofollow" class="logo"><img src="<?php echo get_template_directory_uri(); ?>/library/images/boslogo.png" /></a>
+
 					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
 
 				</div>
