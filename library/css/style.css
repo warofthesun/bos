@@ -1997,11 +1997,18 @@ img {
         .testimonials .container .testimonial .user .name {
           font-weight: bold; }
 
+.founders .pp-tableCell {
+  background-color: #1c1e1e; }
+
+.founders .section-one__background {
+  opacity: .5; }
+
 .founders #inner-content {
   height: calc(100vh - 75px); }
 
 .founders .overlay__dark {
-  left: 0; }
+  left: 0;
+  background-color: transparent; }
 
 .founders .h1, .founders h1 {
   font-size: 1em;

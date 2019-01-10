@@ -110,9 +110,7 @@
 									</div>
 								</div>
 							</li>
-
 						  </ul>
-
 								<script>
 									if($(window).width()>768){
 										$('#pagepiling').pagepiling({
@@ -129,12 +127,8 @@
 									 });
 									};
 								</script>
-
-
 						</main>
-
 				</div>
-
 			</div>
 
 

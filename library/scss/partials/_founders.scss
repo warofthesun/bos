@@ -1,11 +1,20 @@
 .founders {
 
+	.pp-tableCell {
+		background-color: $black;
+	}
+
+	.section-one__background {
+		opacity: .5;
+	}
+
 	#inner-content {
     height: calc(100vh - 75px);
 	}
 
 	.overlay__dark {
 		left: 0;
+		background-color: transparent;
 	}
 
 	.h1, h1 {
