@@ -30,7 +30,7 @@
 									<div class="col-xs-12 col-md-6 section section-two">
 										<div class="col-xs-12 col-md-6 overlay">
 											<article>
-												<h1 class="dark"><a href="<?php the_field('founders_cta_link'); ?>" style="color:#fff;"><?php the_field('developers_title'); ?></a></h1>
+												<h1 class="dark"><a href="<?php the_field('developers_cta_link'); ?>" style="color:#fff;"><?php the_field('developers_title'); ?></a></h1>
 												<h2><?php the_field('developers_tagline'); ?></h2>
 												<a href="<?php the_field('developers_cta_link'); ?>" class="btn--outline btn--outline_black"><?php the_field('developers_cta'); ?></a>
 											</article>

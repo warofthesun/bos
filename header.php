@@ -50,7 +50,7 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-		<svg xmlns="http://www.w3.org/2000/svg" style="position:relative;height:0;display:none;">
+		<svg xmlns="http://www.w3.org/2000/svg" style="position:relative;height:0;width:0;display:block;">
 		   <defs>
 		      <filter id="colors">
 
