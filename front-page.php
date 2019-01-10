@@ -21,7 +21,7 @@
 										<div class="col-xs-12 section-one__background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 										<div class="col-xs-12 col-md-6 overlay overlay__dark">
 											<article>
-												<h1 class="primary"><?php the_field('founders_title'); ?></h1>
+												<h1 class="primary"><a href="<?php the_field('founders_cta_link'); ?>" style="color:#fff;"><?php the_field('founders_title'); ?></a></h1>
 												<h2><?php the_field('founders_tagline'); ?></h2>
 												<a href="<?php the_field('founders_cta_link'); ?>" class="btn--outline btn--outline_blue"><?php the_field('founders_cta'); ?></a>
 											</article>
@@ -30,7 +30,7 @@
 									<div class="col-xs-12 col-md-6 section section-two">
 										<div class="col-xs-12 col-md-6 overlay">
 											<article>
-												<h1 class="dark"><?php the_field('developers_title'); ?></h1>
+												<h1 class="dark"><a href="<?php the_field('founders_cta_link'); ?>" style="color:#fff;"><?php the_field('developers_title'); ?></a></h1>
 												<h2><?php the_field('developers_tagline'); ?></h2>
 												<a href="<?php the_field('developers_cta_link'); ?>" class="btn--outline btn--outline_black"><?php the_field('developers_cta'); ?></a>
 											</article>
