@@ -111,7 +111,7 @@
 								</div>
 							</li>
 						  </ul>
-								<script>
+								<!--script>
 									if($(window).width()>768){
 										$('#pagepiling').pagepiling({
 										 menu: '#menu',
@@ -126,7 +126,7 @@
 										 },
 									 });
 									};
-								</script>
+								</script-->
 						</main>
 				</div>
 			</div>
