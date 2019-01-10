@@ -112,25 +112,9 @@
 							</li>
 
 						  </ul>
-							<div class="mobile-hide">
-								<script>
-								if ( $(window).width() => 600 ) {
-									$('#pagepiling').pagepiling({
-							 		 menu: '#menu',
-							 		 anchors: ['market-fit', 'first-viable-product', 'your-technical-team', 'reduce-upfront-costs', 'go-to-market', 'contact'],
-							 		 navigation: false,
-							 		 scrollingSpeed: 30,
-							 		 easing: 'swing',
-							 		 css3: true,
-							 		 touchSensitivity: 1,
-							 		 afterRender: function(){
-							 			 $('#pp-nav').addClass('custom');
-							 		 },
-							 	 });
- 						 		}
 
-								</script>
-							</div>
+								
+
 
 						</main>
 

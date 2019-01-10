@@ -210,4 +210,22 @@ jQuery(document).ready(function($) {
 		}
 			// END Slider
 
-}); /* end of as page load scripts */
+
+
+});
+
+if($(window).width()>768){
+	$('#pagepiling').pagepiling({
+	 menu: '#menu',
+	 anchors: ['market-fit', 'first-viable-product', 'your-technical-team', 'reduce-upfront-costs', 'go-to-market', 'contact'],
+	 navigation: false,
+	 scrollingSpeed: 30,
+	 easing: 'swing',
+	 css3: true,
+	 touchSensitivity: 1,
+	 afterRender: function(){
+		 $('#pp-nav').addClass('custom');
+	 },
+ });
+};
+/* end of as page load scripts */
