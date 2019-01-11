@@ -28,7 +28,7 @@
 									$icon = get_sub_field('slide_icon');
 								?>
 
-						      <li class="section slide col-sm-12 row">
+						      <li class="section slide col-sm-12 row" >
 										<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="<?php echo $slide_target; ?>"></span>
 										<?php
 											$size = "full"; // (thumbnail, medium, large, full or custom size)
@@ -155,6 +155,16 @@
 								        }
 								    });
 								}
+
+								var contactTop = $('.contact-form').offset().top-300;
+
+								$(window).on( 'scroll', function(){
+								        if ($(window).scrollTop() >= contactTop) {
+								            $('#menu').css({opacity: "0",});
+								        } else {
+								            $('#menu').css({opacity: "1", transition: "all .5s"});
+								        }
+								    });
 								</script>
 						</main>
 				</div>
