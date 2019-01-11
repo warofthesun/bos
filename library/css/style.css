@@ -2137,7 +2137,7 @@ img {
 .founders .slide-nav {
   position: fixed;
   height: 100%;
-  left: 20px;
+  margin-left: 3em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

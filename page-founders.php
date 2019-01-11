@@ -27,8 +27,9 @@
 									$slide_image = get_sub_field('slide_image');
 									$icon = get_sub_field('slide_icon');
 								?>
-								<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="<?php echo $slide_target; ?>"></span>
+
 						      <li class="section slide col-sm-12 row">
+										<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="<?php echo $slide_target; ?>"></span>
 										<?php
 											$size = "full"; // (thumbnail, medium, large, full or custom size)
 											$image = wp_get_attachment_image_src( $slide_image, $size );
@@ -62,8 +63,9 @@
 						      </li>
 
 							<?php endwhile; endif; ?>
-							<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="contact"></span>
+
 							<li class="section slide col-sm-12 row contact" id="contact">
+								<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="contact"></span>
 								<?php
 									$slide_image = get_field('image');
 									$size = "full"; // (thumbnail, medium, large, full or custom size)
