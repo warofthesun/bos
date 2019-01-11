@@ -55,7 +55,7 @@
 				}
 			}
 
-			&:nth-child(odd) {
+			&:nth-of-type(odd) {
 				.right {
 					background-color: $black;
 

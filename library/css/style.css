@@ -2040,9 +2040,9 @@ img {
         padding: 4em; } }
     .founders #pagepiling li .right h1, .founders #pagepiling li .right .h1 {
       color: #1c1e1e; }
-  .founders #pagepiling li:nth-child(odd) .right {
+  .founders #pagepiling li:nth-of-type(odd) .right {
     background-color: #1c1e1e; }
-    .founders #pagepiling li:nth-child(odd) .right h1, .founders #pagepiling li:nth-child(odd) .right .h1 {
+    .founders #pagepiling li:nth-of-type(odd) .right h1, .founders #pagepiling li:nth-of-type(odd) .right .h1 {
       color: #437bd9; }
   .founders #pagepiling .arrow-top-left {
     width: 0;
