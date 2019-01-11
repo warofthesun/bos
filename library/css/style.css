@@ -2000,14 +2000,13 @@ img {
           font-weight: bold; }
 
 .founders .section-one__background {
-  opacity: .5; }
+  opacity: .9; }
 
 .founders #inner-content {
   height: calc(100vh - 75px); }
 
 .founders .overlay__dark {
-  left: 0;
-  background-color: transparent; }
+  left: 0; }
 
 .founders .h1, .founders h1 {
   font-size: 1em;
@@ -2137,7 +2136,7 @@ img {
 .founders .slide-nav {
   position: fixed;
   height: 100%;
-  margin-left: 3em;
+  margin-left: 7em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
