@@ -236,6 +236,5 @@ add_filter('acf/settings/show_admin', '__return_false');
 // 4. Include ACF
 include_once( get_stylesheet_directory() . '/inc/acf/acf.php' );
 
-//include 'inc/acf_fields.php';
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
