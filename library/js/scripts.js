@@ -55,9 +55,6 @@ jQuery(document).ready(function($) {
 				$("#mobile-nav").toggleClass("show");
 			});
 
-	$(function() {
-		  $('.slide-nav ul li:first-child').addClass('active');
-		});
 
 		// START Slider
 			//rotation speed and timer
@@ -135,8 +132,7 @@ jQuery(document).ready(function($) {
 		}
 			// END Slider
 
-
-
+			
 });
 
 /* end of as page load scripts */

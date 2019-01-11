@@ -1,10 +1,5 @@
 <!--page-founders-->
 <?php get_header(); ?>
-<style>
-.footer {
-	display: none;
-}
-</style>
 			<div id="content" class="founders">
 
 				<div id="inner-content" class="wrap wrap--wider row">
@@ -13,15 +8,16 @@
 
 								<div class="slide-nav">
 									<ul id="menu">
-										<?php if( have_rows('content_slides') ) : while( have_rows('content_slides') ): the_row();
-											$slide_target = sanitize_title_for_query( get_sub_field('slide_name') );
-											$slide_name = get_sub_field('slide_name');
-										?>
-										<li data-menuanchor="<?php echo $slide_target; ?>"><a href="#<?php echo $slide_target; ?>"><?php echo $slide_name; ?></a></li>
-									<?php endwhile; endif; ?>
-									<li data-menuanchor="contact"><a href="#contact">contact</a></li>
+											<?php if( have_rows('content_slides') ) : while( have_rows('content_slides') ): the_row();
+												$slide_target = sanitize_title_for_query( get_sub_field('slide_name') );
+												$slide_name = get_sub_field('slide_name');
+											?>
+										<li><a href="#<?php echo $slide_target; ?>"><?php echo $slide_name; ?></a></li>
+											<?php endwhile; endif; ?>
+										<li><a href="#contact">contact</a></li>
 									</ul>
 								</div>
+
 						  <ul id="pagepiling">
 								<?php if( have_rows('content_slides') ) : while( have_rows('content_slides') ): the_row();
 									$slide_target = sanitize_title_for_query( get_sub_field('slide_name') );
@@ -31,7 +27,8 @@
 									$slide_image = get_sub_field('slide_image');
 									$icon = get_sub_field('slide_icon');
 								?>
-						      <li class="section slide col-sm-12 row" id="<?php echo $slide_target; ?>">
+								<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="<?php echo $slide_target; ?>"></span>
+						      <li class="section slide col-sm-12 row">
 										<?php
 											$size = "full"; // (thumbnail, medium, large, full or custom size)
 											$image = wp_get_attachment_image_src( $slide_image, $size );
@@ -65,7 +62,7 @@
 						      </li>
 
 							<?php endwhile; endif; ?>
-
+							<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="contact"></span>
 							<li class="section slide col-sm-12 row contact" id="contact">
 								<?php
 									$slide_image = get_field('image');
@@ -111,25 +108,52 @@
 								</div>
 							</li>
 						  </ul>
-								<!--script>
-									if($(window).width()>768){
-										$('#pagepiling').pagepiling({
-										 menu: '#menu',
-										 anchors: ['market-fit', 'first-viable-product', 'your-technical-team', 'reduce-upfront-costs', 'go-to-market', 'contact'],
-										 navigation: false,
-										 scrollingSpeed: 30,
-										 easing: 'swing',
-										 css3: true,
-										 touchSensitivity: 1,
-										 afterRender: function(){
-											 $('#pp-nav').addClass('custom');
-										 },
-									 });
-									};
-								</script-->
+								<?php get_footer(); ?>
+								<script>
+								$(function() {
+										$('#menu li:first-child a').addClass('active');
+									});
+
+									$(document).ready(function () {
+								    $(document).on("scroll", onScroll);
+
+								    //smoothscroll
+								    $('a[href^="#"]').on('click', function (e) {
+								        e.preventDefault();
+								        $(document).off("scroll");
+
+								        $('a').each(function () {
+								            $(this).removeClass('active');
+								        })
+								        $(this).addClass('active');
+
+								        var target = this.hash,
+								            menu = target;
+								        $target = $(target);
+								        $('html, body').stop().animate({
+								            'scrollTop': $target.offset().top+0
+								        }, 500, 'swing', function () {
+								            window.location.hash = target;
+								            $(document).on("scroll", onScroll);
+								        });
+								    });
+								});
+
+								function onScroll(event){
+								    var scrollPos = $(document).scrollTop();
+								    $('#menu a').each(function () {
+								        var currLink = $(this);
+								        var refElement = $(currLink.attr("href"));
+								        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+								            $('#menu li a').removeClass("active");
+								            currLink.addClass("active");
+								        }
+								        else{
+								            currLink.removeClass("active");
+								        }
+								    });
+								}
+								</script>
 						</main>
 				</div>
 			</div>
-
-
-<?php get_footer(); ?>

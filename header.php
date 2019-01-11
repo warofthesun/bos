@@ -40,8 +40,6 @@
       window.sr = ScrollReveal({ duration: 600, reset: true, easing: 'ease-in', scale: .98, distance:'50px'});
     </script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/library/css/jquery.pagepiling.css" />
-		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/jquery.pagepiling.js"></script>
 
 
 		<?php // drop Google Analytics Here ?>
@@ -50,7 +48,7 @@
 	</head>
 
 	<body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-		<svg xmlns="http://www.w3.org/2000/svg" style="position:relative;height:0;width:0;display:block;">
+		<svg xmlns="http://www.w3.org/2000/svg" style="position:relative;height:0;display:none;">
 		   <defs>
 		      <filter id="colors">
 

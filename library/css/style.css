@@ -1934,18 +1934,20 @@ img {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     position: absolute;
     z-index: 10; }
+    @media only screen and (max-width: 64em) {
+      .section .overlay {
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
     .section .overlay article {
       width: 80%;
       text-align: center;
       color: #fdfdfd; }
       @media only screen and (min-width: 64em) {
         .section .overlay article {
-          margin-top: -30%; } }
+          margin-top: 30%; } }
       .section .overlay article .h1, .section .overlay article h1 {
         padding: .5em 1em;
         font-size: 1em;
@@ -1996,9 +1998,6 @@ img {
         margin-top: 1em; }
         .testimonials .container .testimonial .user .name {
           font-weight: bold; }
-
-.founders .pp-tableCell {
-  background-color: #1c1e1e; }
 
 .founders .section-one__background {
   opacity: .5; }
@@ -2081,6 +2080,7 @@ img {
   z-index: 0;
   width: 100%;
   height: calc(100vh - 75px);
+  background-color: #1c1e1e;
   padding: 0;
   margin: 0; }
   @media only screen and (min-width: 64em) {
@@ -2135,7 +2135,7 @@ img {
     background-image: url("../images/lines_bottom-left-dark.png"); }
 
 .founders .slide-nav {
-  position: absolute;
+  position: fixed;
   height: 100%;
   left: 20px;
   display: -webkit-box;
@@ -2144,7 +2144,7 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 20; }
+  z-index: 80; }
   @media only screen and (max-width: 64em) {
     .founders .slide-nav {
       display: none; } }
@@ -2169,7 +2169,7 @@ img {
         font-weight: 700; }
     .founders #menu li a:hover {
       text-decoration: none; }
-    .founders #menu li:before {
+    .founders #menu li a:before {
       content: "\f111";
       font-family: "Font Awesome 5 Free";
       display: inline-block;
@@ -2182,9 +2182,13 @@ img {
       margin-right: .5em;
       -webkit-transition: all 0.2s ease-in-out;
       transition: all 0.2s ease-in-out; }
-    .founders #menu li.active {
+    .founders #menu li a:hover {
       font-weight: bold; }
-      .founders #menu li.active:before {
+      .founders #menu li a:hover:before {
+        font-weight: bold; }
+    .founders #menu li a.active {
+      font-weight: bold; }
+      .founders #menu li a.active:before {
         font-weight: 700; }
 
 @media only screen and (max-width: 64em) {
@@ -2643,28 +2647,20 @@ h5, .h5 {
   text-transform: uppercase;
   letter-spacing: 2px; }
 
-/*********************
-HEADER STYLES
-*********************/
 .header {
   background-color: #fdfdfd;
   position: relative;
   width: 100%;
   z-index: 99; }
+  @media only screen and (min-width: 64em) {
+    .header {
+      position: fixed; } }
 
 #logo {
   margin: 0.75em 0; }
   #logo a {
     color: #1c1e1e; }
 
-/*
-all navs have a .nav class applied via
-the wp_menu function; this is so we can
-easily write one group of styles for
-the navs on the site so our css is cleaner
-and more scalable.
-
-*/
 #mobile-nav {
   text-align: center;
   margin-bottom: 0em;
@@ -2745,6 +2741,9 @@ POSTS & CONTENT STYLES
 *********************/
 #content {
   margin-top: 0; }
+  @media only screen and (min-width: 64em) {
+    #content {
+      padding-top: 75px; } }
 
 .hentry {
   background-color: #fdfdfd; }
@@ -2763,15 +2762,6 @@ POSTS & CONTENT STYLES
 .entry-title {
   margin: 0; }
 
-/* want to style individual post classes? Booya! */
-/* post by id (i.e. post-3) */
-/* general post style */
-/* general article on a page style */
-/* general style on an attatchment */
-/* sticky post style */
-/* hentry class */
-/* style by category (i.e. category-videos) */
-/* style by tag (i.e. tag-news) */
 /* post meta */
 .byline {
   color: #9fa6b4;
@@ -2780,13 +2770,7 @@ POSTS & CONTENT STYLES
 
 /* entry content */
 .entry-content {
-  padding: 1.5em 1.5em 0;
-  /*
-			image alignment on a screen this size may be
-			a bit difficult. It's set to start aligning
-			and floating images at the next breakpoint,
-			but it's up to you. Feel free to change it up.
-			*/ }
+  padding: 1.5em 1.5em 0; }
   .entry-content p {
     margin: 0 0 1.5em; }
   .entry-content table {
@@ -2895,7 +2879,6 @@ POSTS & CONTENT STYLES
     margin-bottom: 0; }
 
 /* end .gallery */
-/* gallery caption styles */
 .tags {
   margin: 0; }
 
@@ -2943,15 +2926,12 @@ PAGE NAVI STYLES
       background-color: #fdfdfd;
       color: #1c1e1e; }
 
-/* end .bones_page_navi */
-/* fallback previous & next links */
 .wp-prev-next .prev-link {
   float: left; }
 
 .wp-prev-next .next-link {
   float: right; }
 
-/* end .wp-prev-next */
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
