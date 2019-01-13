@@ -28,14 +28,10 @@
 									$icon = get_sub_field('slide_icon');
 								?>
 
-						      <li class="section slide col-sm-12 row" >
-										<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="<?php echo $slide_target; ?>"></span>
+						      <li class="section slide col-sm-12 row" id="<?php echo $slide_target; ?>">
 										<?php
-											$size = "full"; // (thumbnail, medium, large, full or custom size)
+											$size = "full";
 											$image = wp_get_attachment_image_src( $slide_image, $size );
-											// url = $image[0];
-											// width = $image[1];
-											// height = $image[2];
 										?>
 						          <div class="col-xs-0 col-md-6 left section-one__background" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 											<div class="col-xs-0 col-md-6 overlay overlay__dark mobile-hide">
@@ -65,14 +61,10 @@
 							<?php endwhile; endif; ?>
 
 							<li class="section slide col-sm-12 row contact" id="contact">
-								<span style="display:block;height:75px;visibility:hidden;margin-top:-75px;" id="contact"></span>
 								<?php
 									$slide_image = get_field('image');
-									$size = "full"; // (thumbnail, medium, large, full or custom size)
+									$size = "full";
 									$image = wp_get_attachment_image_src( $slide_image, $size );
-									// url = $image[0];
-									// width = $image[1];
-									// height = $image[2];
 								?>
 								<div class="col-xs-12 collapse top-row">
 									<div class="arrow-bottom-left mobile-hide"></div>

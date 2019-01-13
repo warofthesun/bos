@@ -1,5 +1,63 @@
 <?php
+
 if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+	'key' => 'group_5c3a984cbf7cb',
+	'title' => 'Contact Us',
+	'fields' => array(
+		array(
+			'key' => 'field_5c3a9876fc697',
+			'label' => 'Contact Content',
+			'name' => '',
+			'type' => 'message',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => 'Content for the Contact Us page is controlled by the Developers Contact Section.
+
+Go to Pages > Developers and scroll down to the Contact section. Any changes made in that location will update both the Developers contact section and the Contact Us page.',
+			'new_lines' => 'wpautop',
+			'esc_html' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'page',
+				'operator' => '==',
+				'value' => '200',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'seamless',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => array(
+		0 => 'the_content',
+		1 => 'excerpt',
+		2 => 'discussion',
+		3 => 'comments',
+		4 => 'revisions',
+		5 => 'slug',
+		6 => 'author',
+		7 => 'format',
+		8 => 'page_attributes',
+		9 => 'featured_image',
+		10 => 'categories',
+		11 => 'tags',
+		12 => 'send-trackbacks',
+	),
+	'active' => 1,
+	'description' => '',
+));
 
 acf_add_local_field_group(array(
 	'key' => 'group_5c1e9406d6ded',
@@ -25,27 +83,6 @@ acf_add_local_field_group(array(
 			'button_label' => 'Add Slide',
 			'sub_fields' => array(
 				array(
-					'key' => 'field_5c1e95a8b549e',
-					'label' => 'Slide Number',
-					'name' => 'slide_number',
-					'type' => 'number',
-					'instructions' => 'Start from 0.',
-					'required' => 1,
-					'conditional_logic' => 0,
-					'wrapper' => array(
-						'width' => '10',
-						'class' => '',
-						'id' => '',
-					),
-					'default_value' => '',
-					'placeholder' => '',
-					'prepend' => '',
-					'append' => '',
-					'min' => '',
-					'max' => '',
-					'step' => '',
-				),
-				array(
 					'key' => 'field_5c1e945b0f165',
 					'label' => 'Slide Name',
 					'name' => 'slide_name',
@@ -54,7 +91,7 @@ acf_add_local_field_group(array(
 					'required' => 1,
 					'conditional_logic' => 0,
 					'wrapper' => array(
-						'width' => '10',
+						'width' => '15',
 						'class' => '',
 						'id' => '',
 					),
@@ -740,27 +777,6 @@ acf_add_local_field_group(array(
 	'key' => 'group_5c1eafa52e786',
 	'title' => 'Founders Contact Slide',
 	'fields' => array(
-		array(
-			'key' => 'field_5c1eb165426c0',
-			'label' => 'Slide Number',
-			'name' => 'slide_number',
-			'type' => 'number',
-			'instructions' => 'Count from 0.',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '10',
-				'class' => '',
-				'id' => '',
-			),
-			'default_value' => '',
-			'placeholder' => '',
-			'prepend' => '',
-			'append' => '',
-			'min' => '',
-			'max' => '',
-			'step' => '',
-		),
 		array(
 			'key' => 'field_5c1eaff9c9048',
 			'label' => 'Image',

@@ -8,6 +8,7 @@
 						<main id="main" class="col-xs-12" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 							<?php the_field('hero_slides'); ?>
 						</main>
+
 						<article class="dark">
 							<div class="wrap row" style="color:white;">
 								<?php if( have_rows('feature_set') ): while( have_rows('feature_set') ): the_row(); ?>
@@ -21,10 +22,12 @@
 								<?php endwhile; endif; ?>
 							</div>
 						</article>
+
 						<article class="light">
 							<h2><?php the_field('architecture_headline'); ?></h2>
 							<img src="<?php the_field('architecture_image'); ?>" width="100%" height="auto"/>
 						</article>
+
 						<article class="product_development wrap">
 							<h2><?php the_field('product_development_headline'); ?></h2>
 							<div class="row">
@@ -40,6 +43,7 @@
 							<?php endwhile; endif; ?>
 							</ul>
 						</article>
+
 						<article class="dark">
 							<div class="flex--column">
 								<h2><?php the_field('cloud_headline'); ?></h2>
@@ -50,11 +54,8 @@
 						<article class="col-sm-12 section row contact" id="contact">
 							<?php
 								$slide_image = get_field('image');
-								$size = "full"; // (thumbnail, medium, large, full or custom size)
+								$size = "full";
 								$image = wp_get_attachment_image_src( $slide_image, $size );
-								// url = $image[0];
-								// width = $image[1];
-								// height = $image[2];
 							?>
 							<div class="col-xs-12 collapse top-row">
 								<div class="arrow-bottom-left mobile-hide"></div>
