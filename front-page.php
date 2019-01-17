@@ -55,11 +55,11 @@
 												// height = $image[2];
 											?>
 											<li class="container flex flex--row flex--row__mobile-collapse slide">
-												<div class="col-xs-6 col-md-2">
+												<div class="col-xs-6 col-md-2" style="flex:auto;">
 
 													<div class="avatar" style="background-image:url('<?php echo $image[0]; ?>');"></div>
 												</div>
-												<div class="col-xs-12 col-md-10 testimonial">
+												<div class="col-xs-12 col-md-10 testimonial" style="flex:auto;">
 													<?php the_sub_field('testimonial'); ?>
 													<div class="user">
 														<span class="name"><?php the_sub_field('name'); ?> </span><span class="title"><?php the_sub_field('position'); ?></span>
